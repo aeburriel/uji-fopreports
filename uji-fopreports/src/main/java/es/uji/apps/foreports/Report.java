@@ -3,15 +3,14 @@ package es.uji.apps.foreports;
 import java.io.OutputStream;
 
 import es.uji.apps.fopreports.fop.Block;
-import es.uji.apps.fopreports.fop.Flow;
-import es.uji.apps.fopreports.fop.LayoutMasterSet;
+import es.uji.apps.fopreports.fop.DisplayAlignType;
 import es.uji.apps.fopreports.fop.PageSequence;
-import es.uji.apps.fopreports.fop.RegionAfter;
-import es.uji.apps.fopreports.fop.RegionBefore;
-import es.uji.apps.fopreports.fop.RegionBody;
 import es.uji.apps.fopreports.fop.Root;
 import es.uji.apps.fopreports.fop.SimplePageMaster;
 import es.uji.apps.fopreports.fop.StaticContent;
+import es.uji.apps.fopreports.fop.Table;
+import es.uji.apps.fopreports.fop.TableCell;
+import es.uji.apps.fopreports.fop.TableRow;
 import es.uji.apps.fopreports.serialization.FopPDFSerializer;
 import es.uji.apps.fopreports.serialization.ReportSerializationException;
 import es.uji.apps.fopreports.serialization.ReportSerializer;
@@ -35,60 +34,106 @@ public class Report
         simplePageMaster.setPageWidth("21cm");
         simplePageMaster.setPageHeight("29.70cm");
         simplePageMaster.setMasterName("first");
-
-        RegionBefore regionBefore = new RegionBefore();
-        regionBefore.setExtent("3cm");
-        simplePageMaster.setRegionBefore(regionBefore);
-
-        RegionBody regionBody = new RegionBody();
-        regionBody.setMarginTop("3cm");
-        regionBody.setMarginBottom("2cm");
-        simplePageMaster.setRegionBody(regionBody);
-
-        RegionAfter regionAfter = new RegionAfter();
-        regionAfter.setExtent("5cm");
-        simplePageMaster.setRegionAfter(regionAfter);
-
-        LayoutMasterSet layoutMaster = new LayoutMasterSet();
-        layoutMaster.getSimplePageMasterOrPageSequenceMaster().add(simplePageMaster);
-
-        Flow flow = new Flow();
-        flow.setFlowName("xsl-region-body");
-
-        PageSequence pageSequence = new PageSequence();
-        pageSequence.setMasterReference("first");
-        pageSequence.setFlow(flow);        
+        simplePageMaster.withRegionBefore().setExtent("3cm");
+        simplePageMaster.withRegionAfter().setExtent("5cm");
+        simplePageMaster.withRegionBody().setMarginTop("3cm");
+        simplePageMaster.withRegionBody().setMarginBottom("2cm");
 
         root = new Root();
-        root.setLayoutMasterSet(layoutMaster);
-        root.getPageSequence().add(pageSequence);
+        root.withLayoutMasterSet().getSimplePageMasterOrPageSequenceMaster().add(simplePageMaster);
+        PageSequence pageSequence = root.withNewPageSequence();
+        pageSequence.setMasterReference("first");
+        pageSequence.withFlow().setFlowName("xsl-region-body");
     }
 
-    public void add(Object content)
+    protected void add(Object content)
     {
-        root.getPageSequence().get(0).getFlow().getElements().add(content);
+        root.withPageSequence(0).withFlow().getMarkerOrBlockOrBlockContainer().add(content);
     }
 
-    public void serialize(OutputStream output) throws ReportSerializationException
+    protected void serialize(OutputStream output) throws ReportSerializationException
     {
         serializer.serialize(root, output);
     }
-    
-    public void setHeader(Block block)
+
+    protected Block withNewBlock()
     {
-        StaticContent staticContent = new StaticContent();
+        Block block = new Block();
+        add(block);
+        
+        return block;
+    }
+    
+    protected Table withNewTable()
+    {
+        Table table = new Table();
+        add(table);
+        
+        return table;
+    }
+    
+    protected Block withHeader()
+    {
+        Block block = new Block();
+        StaticContent staticContent = root.withPageSequence(0).withNewStaticContent();
         staticContent.setFlowName("xsl-region-before");
         staticContent.getBlockOrBlockContainerOrTable().add(block);
         
-        root.getPageSequence().get(0).getStaticContent().add(staticContent);        
+        return block;
     }
-    
-    public void setFooter(Block block)
+
+    protected Block withFooter()
     {
-        StaticContent staticContent = new StaticContent();
+        Block block = new Block();
+        StaticContent staticContent = root.withPageSequence(0).withNewStaticContent();
         staticContent.setFlowName("xsl-region-after");
         staticContent.getBlockOrBlockContainerOrTable().add(block);
         
-        root.getPageSequence().get(0).getStaticContent().add(staticContent);        
-    }    
+        return block;
+    }
+    
+    protected TableCell withNewCell(int colSpan, int rowSpan)
+    {
+        TableCell tableCell = new TableCell();
+        tableCell.setBorder("solid");
+        tableCell.setDisplayAlign(DisplayAlignType.BEFORE);
+        tableCell.setPadding("0.1cm");
+        tableCell.setNumberColumnsSpanned(String.valueOf(colSpan));
+        tableCell.setNumberRowsSpanned(String.valueOf(rowSpan));
+
+        return tableCell;
+    }
+
+    protected TableCell withNewTextCell(String cellText, int colSpan, int rowSpan)
+    {
+        TableCell tableCell = withNewCell(colSpan, rowSpan);
+
+        Block block = new Block();
+        block.getContent().add(cellText);
+        block.setFontSize("7pt");
+        tableCell.getMarkerOrBlockOrBlockContainer().add(block);
+
+        return tableCell;
+    }
+
+    protected TableCell withNewEmptyCell(int colSpan, int rowSpan)
+    {
+        TableCell tableCell = withNewCell(colSpan, rowSpan);
+
+        tableCell.getMarkerOrBlockOrBlockContainer().add(new Block());
+
+        return tableCell;
+    }
+    
+    protected TableRow withNewTableRow(String... columnsText)
+    {
+        TableRow tableRow = new TableRow();
+
+        for (String columnText : columnsText)
+        {
+            tableRow.getTableCell().add(withNewTextCell(columnText, 1, 1));
+        }
+
+        return tableRow;
+    }
 }
