@@ -15,9 +15,12 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import es.uji.apps.fopreports.style.ReportStyle;
 
 
 /**
@@ -561,6 +564,24 @@ public class Table {
     protected String sourceDocument;
     @XmlAttribute(name = "role")
     protected String role;
+    
+    @XmlTransient
+    private ReportStyle style;
+
+    public Table()
+    {        
+    }
+    
+    public Table(ReportStyle style)
+    {
+        this.style = style;
+        
+        setStyles(style);
+    }
+
+    public void setStyles(ReportStyle style)
+    {
+    }
 
     /**
      * Gets the value of the tableColumn property.

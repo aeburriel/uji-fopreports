@@ -16,9 +16,12 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import es.uji.apps.fopreports.style.ReportStyle;
 
 
 /**
@@ -523,6 +526,30 @@ public class TableCell {
     protected String inlineProgressionDimensionOptimum;
     @XmlAttribute(name = "inline-progression-dimension.maximum")
     protected String inlineProgressionDimensionMaximum;
+    
+    @XmlTransient
+    private ReportStyle style;
+
+    public TableCell()
+    {
+        
+    }
+    
+    public TableCell(ReportStyle style)
+    {
+        this.style = style;
+        
+        setStyles(style);
+    }
+
+    public void setStyles(ReportStyle style)
+    {
+        setBorder(style.getTableCellBorder());
+        setDisplayAlign(style.getTableCellDisplayAlign());
+        setPadding(style.getTableCellPadding());
+        setColor(style.getTableCellColor());
+        getBorderColor().add(style.getTableCellBorderColor());
+    }
 
     /**
      * Gets the value of the markerOrBlockOrBlockContainer property.

@@ -17,9 +17,12 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import es.uji.apps.fopreports.style.ReportStyle;
 
 
 /**
@@ -596,6 +599,27 @@ public class Block {
     protected String sourceDocument;
     @XmlAttribute(name = "role")
     protected String role;
+    
+    @XmlTransient
+    private ReportStyle style;
+
+    public Block()
+    {        
+    }
+    
+    public Block(ReportStyle style)
+    {
+        this.style = style;
+        
+        setStyles(style);
+    }
+
+    public void setStyles(ReportStyle style)
+    {
+        setFontSize(style.getBlockFontSize());
+        setTextAlign(style.getBlockTextAlign());
+        setColor(style.getBlockColor());
+    }
 
     /**
      * 

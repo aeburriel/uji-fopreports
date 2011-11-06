@@ -5,7 +5,6 @@
 // Generated on: 2011.10.13 at 06:06:38 PM CEST 
 //
 
-
 package es.uji.apps.fopreports.fop;
 
 import java.util.ArrayList;
@@ -15,15 +14,19 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import es.uji.apps.fopreports.style.ReportStyle;
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -44,13 +47,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "layoutMasterSet",
-    "declarations",
-    "pageSequence"
-})
+@XmlType(name = "", propOrder = { "layoutMasterSet", "declarations", "pageSequence" })
 @XmlRootElement(name = "root")
-public class Root {
+public class Root
+{
 
     @XmlElement(name = "layout-master-set", required = true)
     protected LayoutMasterSet layoutMasterSet;
@@ -235,15 +235,32 @@ public class Root {
     @XmlAttribute(name = "writing-mode")
     protected WritingModeType writingMode;
 
+    @XmlTransient
+    private ReportStyle style;
+
+    public Root()
+    {
+    }
+
+    public Root(ReportStyle style)
+    {
+        this.style = style;
+        
+        setStyles(style);
+    }
+
+    public void setStyles(ReportStyle style2)
+    {
+    }
+
     /**
      * Gets the value of the layoutMasterSet property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LayoutMasterSet }
-     *     
+     * @return possible object is {@link LayoutMasterSet }
+     * 
      */
-    public LayoutMasterSet getLayoutMasterSet() {
+    public LayoutMasterSet getLayoutMasterSet()
+    {
         return layoutMasterSet;
     }
 
@@ -251,23 +268,22 @@ public class Root {
      * Sets the value of the layoutMasterSet property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LayoutMasterSet }
-     *     
+     *            allowed object is {@link LayoutMasterSet }
+     * 
      */
-    public void setLayoutMasterSet(LayoutMasterSet value) {
+    public void setLayoutMasterSet(LayoutMasterSet value)
+    {
         this.layoutMasterSet = value;
     }
 
     /**
      * Gets the value of the declarations property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Declarations }
-     *     
+     * @return possible object is {@link Declarations }
+     * 
      */
-    public Declarations getDeclarations() {
+    public Declarations getDeclarations()
+    {
         return declarations;
     }
 
@@ -275,11 +291,11 @@ public class Root {
      * Sets the value of the declarations property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link Declarations }
-     *     
+     *            allowed object is {@link Declarations }
+     * 
      */
-    public void setDeclarations(Declarations value) {
+    public void setDeclarations(Declarations value)
+    {
         this.declarations = value;
     }
 
@@ -287,26 +303,27 @@ public class Root {
      * Gets the value of the pageSequence property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pageSequence property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the pageSequence property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getPageSequence().add(newItem);
+     * getPageSequence().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link PageSequence }
+     * Objects of the following type(s) are allowed in the list {@link PageSequence }
      * 
      * 
      */
-    public List<PageSequence> getPageSequence() {
-        if (pageSequence == null) {
+    public List<PageSequence> getPageSequence()
+    {
+        if (pageSequence == null)
+        {
             pageSequence = new ArrayList<PageSequence>();
         }
         return this.pageSequence;
@@ -315,12 +332,11 @@ public class Root {
     /**
      * Gets the value of the mediaUsage property.
      * 
-     * @return
-     *     possible object is
-     *     {@link MediaUsageType }
-     *     
+     * @return possible object is {@link MediaUsageType }
+     * 
      */
-    public MediaUsageType getMediaUsage() {
+    public MediaUsageType getMediaUsage()
+    {
         return mediaUsage;
     }
 
@@ -328,23 +344,22 @@ public class Root {
      * Sets the value of the mediaUsage property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link MediaUsageType }
-     *     
+     *            allowed object is {@link MediaUsageType }
+     * 
      */
-    public void setMediaUsage(MediaUsageType value) {
+    public void setMediaUsage(MediaUsageType value)
+    {
         this.mediaUsage = value;
     }
 
     /**
      * Gets the value of the borderBottom property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderBottom() {
+    public String getBorderBottom()
+    {
         return borderBottom;
     }
 
@@ -352,23 +367,22 @@ public class Root {
      * Sets the value of the borderBottom property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderBottom(String value) {
+    public void setBorderBottom(String value)
+    {
         this.borderBottom = value;
     }
 
     /**
      * Gets the value of the borderCollapse property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BorderCollapseType }
-     *     
+     * @return possible object is {@link BorderCollapseType }
+     * 
      */
-    public BorderCollapseType getBorderCollapse() {
+    public BorderCollapseType getBorderCollapse()
+    {
         return borderCollapse;
     }
 
@@ -376,11 +390,11 @@ public class Root {
      * Sets the value of the borderCollapse property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link BorderCollapseType }
-     *     
+     *            allowed object is {@link BorderCollapseType }
+     * 
      */
-    public void setBorderCollapse(BorderCollapseType value) {
+    public void setBorderCollapse(BorderCollapseType value)
+    {
         this.borderCollapse = value;
     }
 
@@ -388,26 +402,27 @@ public class Root {
      * Gets the value of the borderColor property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the borderColor property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the borderColor property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBorderColor().add(newItem);
+     * getBorderColor().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getBorderColor() {
-        if (borderColor == null) {
+    public List<String> getBorderColor()
+    {
+        if (borderColor == null)
+        {
             borderColor = new ArrayList<String>();
         }
         return this.borderColor;
@@ -416,12 +431,11 @@ public class Root {
     /**
      * Gets the value of the borderLeft property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderLeft() {
+    public String getBorderLeft()
+    {
         return borderLeft;
     }
 
@@ -429,23 +443,22 @@ public class Root {
      * Sets the value of the borderLeft property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderLeft(String value) {
+    public void setBorderLeft(String value)
+    {
         this.borderLeft = value;
     }
 
     /**
      * Gets the value of the borderRight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderRight() {
+    public String getBorderRight()
+    {
         return borderRight;
     }
 
@@ -453,11 +466,11 @@ public class Root {
      * Sets the value of the borderRight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderRight(String value) {
+    public void setBorderRight(String value)
+    {
         this.borderRight = value;
     }
 
@@ -465,26 +478,27 @@ public class Root {
      * Gets the value of the borderSeparation property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the borderSeparation property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the borderSeparation property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBorderSeparation().add(newItem);
+     * getBorderSeparation().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getBorderSeparation() {
-        if (borderSeparation == null) {
+    public List<String> getBorderSeparation()
+    {
+        if (borderSeparation == null)
+        {
             borderSeparation = new ArrayList<String>();
         }
         return this.borderSeparation;
@@ -494,26 +508,27 @@ public class Root {
      * Gets the value of the borderStyle property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the borderStyle property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the borderStyle property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBorderStyle().add(newItem);
+     * getBorderStyle().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link BorderStyleType }
+     * Objects of the following type(s) are allowed in the list {@link BorderStyleType }
      * 
      * 
      */
-    public List<BorderStyleType> getBorderStyle() {
-        if (borderStyle == null) {
+    public List<BorderStyleType> getBorderStyle()
+    {
+        if (borderStyle == null)
+        {
             borderStyle = new ArrayList<BorderStyleType>();
         }
         return this.borderStyle;
@@ -522,12 +537,11 @@ public class Root {
     /**
      * Gets the value of the borderTop property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderTop() {
+    public String getBorderTop()
+    {
         return borderTop;
     }
 
@@ -535,11 +549,11 @@ public class Root {
      * Sets the value of the borderTop property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderTop(String value) {
+    public void setBorderTop(String value)
+    {
         this.borderTop = value;
     }
 
@@ -547,26 +561,27 @@ public class Root {
      * Gets the value of the borderWidth property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the borderWidth property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the borderWidth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBorderWidth().add(newItem);
+     * getBorderWidth().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getBorderWidth() {
-        if (borderWidth == null) {
+    public List<String> getBorderWidth()
+    {
+        if (borderWidth == null)
+        {
             borderWidth = new ArrayList<String>();
         }
         return this.borderWidth;
@@ -575,12 +590,11 @@ public class Root {
     /**
      * Gets the value of the color property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getColor() {
+    public String getColor()
+    {
         return color;
     }
 
@@ -588,23 +602,22 @@ public class Root {
      * Sets the value of the color property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setColor(String value) {
+    public void setColor(String value)
+    {
         this.color = value;
     }
 
     /**
      * Gets the value of the country property.
      * 
-     * @return
-     *     possible object is
-     *     {@link CountryType }
-     *     
+     * @return possible object is {@link CountryType }
+     * 
      */
-    public CountryType getCountry() {
+    public CountryType getCountry()
+    {
         return country;
     }
 
@@ -612,23 +625,22 @@ public class Root {
      * Sets the value of the country property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link CountryType }
-     *     
+     *            allowed object is {@link CountryType }
+     * 
      */
-    public void setCountry(CountryType value) {
+    public void setCountry(CountryType value)
+    {
         this.country = value;
     }
 
     /**
      * Gets the value of the displayAlign property.
      * 
-     * @return
-     *     possible object is
-     *     {@link DisplayAlignType }
-     *     
+     * @return possible object is {@link DisplayAlignType }
+     * 
      */
-    public DisplayAlignType getDisplayAlign() {
+    public DisplayAlignType getDisplayAlign()
+    {
         return displayAlign;
     }
 
@@ -636,23 +648,22 @@ public class Root {
      * Sets the value of the displayAlign property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link DisplayAlignType }
-     *     
+     *            allowed object is {@link DisplayAlignType }
+     * 
      */
-    public void setDisplayAlign(DisplayAlignType value) {
+    public void setDisplayAlign(DisplayAlignType value)
+    {
         this.displayAlign = value;
     }
 
     /**
      * Gets the value of the endIndent property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getEndIndent() {
+    public String getEndIndent()
+    {
         return endIndent;
     }
 
@@ -660,23 +671,22 @@ public class Root {
      * Sets the value of the endIndent property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setEndIndent(String value) {
+    public void setEndIndent(String value)
+    {
         this.endIndent = value;
     }
 
     /**
      * Gets the value of the fontFamily property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontFamily() {
+    public String getFontFamily()
+    {
         return fontFamily;
     }
 
@@ -684,23 +694,22 @@ public class Root {
      * Sets the value of the fontFamily property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontFamily(String value) {
+    public void setFontFamily(String value)
+    {
         this.fontFamily = value;
     }
 
     /**
      * Gets the value of the fontSize property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontSize() {
+    public String getFontSize()
+    {
         return fontSize;
     }
 
@@ -708,23 +717,22 @@ public class Root {
      * Sets the value of the fontSize property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontSize(String value) {
+    public void setFontSize(String value)
+    {
         this.fontSize = value;
     }
 
     /**
      * Gets the value of the fontStyle property.
      * 
-     * @return
-     *     possible object is
-     *     {@link FontStyleType }
-     *     
+     * @return possible object is {@link FontStyleType }
+     * 
      */
-    public FontStyleType getFontStyle() {
+    public FontStyleType getFontStyle()
+    {
         return fontStyle;
     }
 
@@ -732,23 +740,22 @@ public class Root {
      * Sets the value of the fontStyle property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link FontStyleType }
-     *     
+     *            allowed object is {@link FontStyleType }
+     * 
      */
-    public void setFontStyle(FontStyleType value) {
+    public void setFontStyle(FontStyleType value)
+    {
         this.fontStyle = value;
     }
 
     /**
      * Gets the value of the fontWeight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontWeight() {
+    public String getFontWeight()
+    {
         return fontWeight;
     }
 
@@ -756,23 +763,22 @@ public class Root {
      * Sets the value of the fontWeight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontWeight(String value) {
+    public void setFontWeight(String value)
+    {
         this.fontWeight = value;
     }
 
     /**
      * Gets the value of the hyphenate property.
      * 
-     * @return
-     *     possible object is
-     *     {@link HyphenateType }
-     *     
+     * @return possible object is {@link HyphenateType }
+     * 
      */
-    public HyphenateType getHyphenate() {
+    public HyphenateType getHyphenate()
+    {
         return hyphenate;
     }
 
@@ -780,23 +786,22 @@ public class Root {
      * Sets the value of the hyphenate property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link HyphenateType }
-     *     
+     *            allowed object is {@link HyphenateType }
+     * 
      */
-    public void setHyphenate(HyphenateType value) {
+    public void setHyphenate(HyphenateType value)
+    {
         this.hyphenate = value;
     }
 
     /**
      * Gets the value of the hyphenationCharacter property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getHyphenationCharacter() {
+    public String getHyphenationCharacter()
+    {
         return hyphenationCharacter;
     }
 
@@ -804,23 +809,22 @@ public class Root {
      * Sets the value of the hyphenationCharacter property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setHyphenationCharacter(String value) {
+    public void setHyphenationCharacter(String value)
+    {
         this.hyphenationCharacter = value;
     }
 
     /**
      * Gets the value of the hyphenationPushCharacterCount property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getHyphenationPushCharacterCount() {
+    public String getHyphenationPushCharacterCount()
+    {
         return hyphenationPushCharacterCount;
     }
 
@@ -828,23 +832,22 @@ public class Root {
      * Sets the value of the hyphenationPushCharacterCount property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setHyphenationPushCharacterCount(String value) {
+    public void setHyphenationPushCharacterCount(String value)
+    {
         this.hyphenationPushCharacterCount = value;
     }
 
     /**
      * Gets the value of the hyphenationRemainCharacterCount property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getHyphenationRemainCharacterCount() {
+    public String getHyphenationRemainCharacterCount()
+    {
         return hyphenationRemainCharacterCount;
     }
 
@@ -852,11 +855,11 @@ public class Root {
      * Sets the value of the hyphenationRemainCharacterCount property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setHyphenationRemainCharacterCount(String value) {
+    public void setHyphenationRemainCharacterCount(String value)
+    {
         this.hyphenationRemainCharacterCount = value;
     }
 
@@ -864,26 +867,27 @@ public class Root {
      * Gets the value of the keepTogether property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the keepTogether property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the keepTogether property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getKeepTogether().add(newItem);
+     * getKeepTogether().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getKeepTogether() {
-        if (keepTogether == null) {
+    public List<String> getKeepTogether()
+    {
+        if (keepTogether == null)
+        {
             keepTogether = new ArrayList<String>();
         }
         return this.keepTogether;
@@ -892,12 +896,11 @@ public class Root {
     /**
      * Gets the value of the keepTogetherWithinColumn property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getKeepTogetherWithinColumn() {
+    public String getKeepTogetherWithinColumn()
+    {
         return keepTogetherWithinColumn;
     }
 
@@ -905,23 +908,22 @@ public class Root {
      * Sets the value of the keepTogetherWithinColumn property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setKeepTogetherWithinColumn(String value) {
+    public void setKeepTogetherWithinColumn(String value)
+    {
         this.keepTogetherWithinColumn = value;
     }
 
     /**
      * Gets the value of the keepTogetherWithinLine property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getKeepTogetherWithinLine() {
+    public String getKeepTogetherWithinLine()
+    {
         return keepTogetherWithinLine;
     }
 
@@ -929,23 +931,22 @@ public class Root {
      * Sets the value of the keepTogetherWithinLine property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setKeepTogetherWithinLine(String value) {
+    public void setKeepTogetherWithinLine(String value)
+    {
         this.keepTogetherWithinLine = value;
     }
 
     /**
      * Gets the value of the keepTogetherWithinPage property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getKeepTogetherWithinPage() {
+    public String getKeepTogetherWithinPage()
+    {
         return keepTogetherWithinPage;
     }
 
@@ -953,23 +954,22 @@ public class Root {
      * Sets the value of the keepTogetherWithinPage property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setKeepTogetherWithinPage(String value) {
+    public void setKeepTogetherWithinPage(String value)
+    {
         this.keepTogetherWithinPage = value;
     }
 
     /**
      * Gets the value of the language property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LanguageType }
-     *     
+     * @return possible object is {@link LanguageType }
+     * 
      */
-    public LanguageType getLanguage() {
+    public LanguageType getLanguage()
+    {
         return language;
     }
 
@@ -977,23 +977,22 @@ public class Root {
      * Sets the value of the language property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LanguageType }
-     *     
+     *            allowed object is {@link LanguageType }
+     * 
      */
-    public void setLanguage(LanguageType value) {
+    public void setLanguage(LanguageType value)
+    {
         this.language = value;
     }
 
     /**
      * Gets the value of the leaderAlignment property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LeaderAlignmentType }
-     *     
+     * @return possible object is {@link LeaderAlignmentType }
+     * 
      */
-    public LeaderAlignmentType getLeaderAlignment() {
+    public LeaderAlignmentType getLeaderAlignment()
+    {
         return leaderAlignment;
     }
 
@@ -1001,11 +1000,11 @@ public class Root {
      * Sets the value of the leaderAlignment property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LeaderAlignmentType }
-     *     
+     *            allowed object is {@link LeaderAlignmentType }
+     * 
      */
-    public void setLeaderAlignment(LeaderAlignmentType value) {
+    public void setLeaderAlignment(LeaderAlignmentType value)
+    {
         this.leaderAlignment = value;
     }
 
@@ -1013,26 +1012,27 @@ public class Root {
      * Gets the value of the leaderLength property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the leaderLength property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the leaderLength property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getLeaderLength().add(newItem);
+     * getLeaderLength().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getLeaderLength() {
-        if (leaderLength == null) {
+    public List<String> getLeaderLength()
+    {
+        if (leaderLength == null)
+        {
             leaderLength = new ArrayList<String>();
         }
         return this.leaderLength;
@@ -1041,12 +1041,11 @@ public class Root {
     /**
      * Gets the value of the leaderLengthMaximum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLeaderLengthMaximum() {
+    public String getLeaderLengthMaximum()
+    {
         return leaderLengthMaximum;
     }
 
@@ -1054,23 +1053,22 @@ public class Root {
      * Sets the value of the leaderLengthMaximum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLeaderLengthMaximum(String value) {
+    public void setLeaderLengthMaximum(String value)
+    {
         this.leaderLengthMaximum = value;
     }
 
     /**
      * Gets the value of the leaderLengthMinimum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLeaderLengthMinimum() {
+    public String getLeaderLengthMinimum()
+    {
         return leaderLengthMinimum;
     }
 
@@ -1078,23 +1076,22 @@ public class Root {
      * Sets the value of the leaderLengthMinimum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLeaderLengthMinimum(String value) {
+    public void setLeaderLengthMinimum(String value)
+    {
         this.leaderLengthMinimum = value;
     }
 
     /**
      * Gets the value of the leaderLengthOptimum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLeaderLengthOptimum() {
+    public String getLeaderLengthOptimum()
+    {
         return leaderLengthOptimum;
     }
 
@@ -1102,23 +1099,22 @@ public class Root {
      * Sets the value of the leaderLengthOptimum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLeaderLengthOptimum(String value) {
+    public void setLeaderLengthOptimum(String value)
+    {
         this.leaderLengthOptimum = value;
     }
 
     /**
      * Gets the value of the leaderPattern property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LeaderPatternType }
-     *     
+     * @return possible object is {@link LeaderPatternType }
+     * 
      */
-    public LeaderPatternType getLeaderPattern() {
+    public LeaderPatternType getLeaderPattern()
+    {
         return leaderPattern;
     }
 
@@ -1126,23 +1122,22 @@ public class Root {
      * Sets the value of the leaderPattern property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LeaderPatternType }
-     *     
+     *            allowed object is {@link LeaderPatternType }
+     * 
      */
-    public void setLeaderPattern(LeaderPatternType value) {
+    public void setLeaderPattern(LeaderPatternType value)
+    {
         this.leaderPattern = value;
     }
 
     /**
      * Gets the value of the leaderPatternWidth property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLeaderPatternWidth() {
+    public String getLeaderPatternWidth()
+    {
         return leaderPatternWidth;
     }
 
@@ -1150,23 +1145,22 @@ public class Root {
      * Sets the value of the leaderPatternWidth property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLeaderPatternWidth(String value) {
+    public void setLeaderPatternWidth(String value)
+    {
         this.leaderPatternWidth = value;
     }
 
     /**
      * Gets the value of the letterSpacing property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLetterSpacing() {
+    public String getLetterSpacing()
+    {
         return letterSpacing;
     }
 
@@ -1174,23 +1168,22 @@ public class Root {
      * Sets the value of the letterSpacing property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLetterSpacing(String value) {
+    public void setLetterSpacing(String value)
+    {
         this.letterSpacing = value;
     }
 
     /**
      * Gets the value of the lineHeight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLineHeight() {
+    public String getLineHeight()
+    {
         return lineHeight;
     }
 
@@ -1198,23 +1191,22 @@ public class Root {
      * Sets the value of the lineHeight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLineHeight(String value) {
+    public void setLineHeight(String value)
+    {
         this.lineHeight = value;
     }
 
     /**
      * Gets the value of the orphans property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getOrphans() {
+    public String getOrphans()
+    {
         return orphans;
     }
 
@@ -1222,23 +1214,22 @@ public class Root {
      * Sets the value of the orphans property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setOrphans(String value) {
+    public void setOrphans(String value)
+    {
         this.orphans = value;
     }
 
     /**
      * Gets the value of the position property.
      * 
-     * @return
-     *     possible object is
-     *     {@link PositionType }
-     *     
+     * @return possible object is {@link PositionType }
+     * 
      */
-    public PositionType getPosition() {
+    public PositionType getPosition()
+    {
         return position;
     }
 
@@ -1246,23 +1237,22 @@ public class Root {
      * Sets the value of the position property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link PositionType }
-     *     
+     *            allowed object is {@link PositionType }
+     * 
      */
-    public void setPosition(PositionType value) {
+    public void setPosition(PositionType value)
+    {
         this.position = value;
     }
 
     /**
      * Gets the value of the provisionalDistanceBetweenStarts property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getProvisionalDistanceBetweenStarts() {
+    public String getProvisionalDistanceBetweenStarts()
+    {
         return provisionalDistanceBetweenStarts;
     }
 
@@ -1270,23 +1260,22 @@ public class Root {
      * Sets the value of the provisionalDistanceBetweenStarts property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setProvisionalDistanceBetweenStarts(String value) {
+    public void setProvisionalDistanceBetweenStarts(String value)
+    {
         this.provisionalDistanceBetweenStarts = value;
     }
 
     /**
      * Gets the value of the provisionalLabelSeparation property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getProvisionalLabelSeparation() {
+    public String getProvisionalLabelSeparation()
+    {
         return provisionalLabelSeparation;
     }
 
@@ -1294,23 +1283,22 @@ public class Root {
      * Sets the value of the provisionalLabelSeparation property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setProvisionalLabelSeparation(String value) {
+    public void setProvisionalLabelSeparation(String value)
+    {
         this.provisionalLabelSeparation = value;
     }
 
     /**
      * Gets the value of the relativeAlign property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RelativeAlignType }
-     *     
+     * @return possible object is {@link RelativeAlignType }
+     * 
      */
-    public RelativeAlignType getRelativeAlign() {
+    public RelativeAlignType getRelativeAlign()
+    {
         return relativeAlign;
     }
 
@@ -1318,23 +1306,22 @@ public class Root {
      * Sets the value of the relativeAlign property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RelativeAlignType }
-     *     
+     *            allowed object is {@link RelativeAlignType }
+     * 
      */
-    public void setRelativeAlign(RelativeAlignType value) {
+    public void setRelativeAlign(RelativeAlignType value)
+    {
         this.relativeAlign = value;
     }
 
     /**
      * Gets the value of the ruleStyle property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RuleStyleType }
-     *     
+     * @return possible object is {@link RuleStyleType }
+     * 
      */
-    public RuleStyleType getRuleStyle() {
+    public RuleStyleType getRuleStyle()
+    {
         return ruleStyle;
     }
 
@@ -1342,23 +1329,22 @@ public class Root {
      * Sets the value of the ruleStyle property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RuleStyleType }
-     *     
+     *            allowed object is {@link RuleStyleType }
+     * 
      */
-    public void setRuleStyle(RuleStyleType value) {
+    public void setRuleStyle(RuleStyleType value)
+    {
         this.ruleStyle = value;
     }
 
     /**
      * Gets the value of the ruleThickness property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getRuleThickness() {
+    public String getRuleThickness()
+    {
         return ruleThickness;
     }
 
@@ -1366,23 +1352,22 @@ public class Root {
      * Sets the value of the ruleThickness property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setRuleThickness(String value) {
+    public void setRuleThickness(String value)
+    {
         this.ruleThickness = value;
     }
 
     /**
      * Gets the value of the startIndent property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getStartIndent() {
+    public String getStartIndent()
+    {
         return startIndent;
     }
 
@@ -1390,23 +1375,22 @@ public class Root {
      * Sets the value of the startIndent property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setStartIndent(String value) {
+    public void setStartIndent(String value)
+    {
         this.startIndent = value;
     }
 
     /**
      * Gets the value of the textAlign property.
      * 
-     * @return
-     *     possible object is
-     *     {@link TextAlignType }
-     *     
+     * @return possible object is {@link TextAlignType }
+     * 
      */
-    public TextAlignType getTextAlign() {
+    public TextAlignType getTextAlign()
+    {
         return textAlign;
     }
 
@@ -1414,23 +1398,22 @@ public class Root {
      * Sets the value of the textAlign property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link TextAlignType }
-     *     
+     *            allowed object is {@link TextAlignType }
+     * 
      */
-    public void setTextAlign(TextAlignType value) {
+    public void setTextAlign(TextAlignType value)
+    {
         this.textAlign = value;
     }
 
     /**
      * Gets the value of the textAlignLast property.
      * 
-     * @return
-     *     possible object is
-     *     {@link TextAlignLastType }
-     *     
+     * @return possible object is {@link TextAlignLastType }
+     * 
      */
-    public TextAlignLastType getTextAlignLast() {
+    public TextAlignLastType getTextAlignLast()
+    {
         return textAlignLast;
     }
 
@@ -1438,23 +1421,22 @@ public class Root {
      * Sets the value of the textAlignLast property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link TextAlignLastType }
-     *     
+     *            allowed object is {@link TextAlignLastType }
+     * 
      */
-    public void setTextAlignLast(TextAlignLastType value) {
+    public void setTextAlignLast(TextAlignLastType value)
+    {
         this.textAlignLast = value;
     }
 
     /**
      * Gets the value of the textIndent property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getTextIndent() {
+    public String getTextIndent()
+    {
         return textIndent;
     }
 
@@ -1462,23 +1444,22 @@ public class Root {
      * Sets the value of the textIndent property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setTextIndent(String value) {
+    public void setTextIndent(String value)
+    {
         this.textIndent = value;
     }
 
     /**
      * Gets the value of the whiteSpaceCollapse property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WhiteSpaceCollapseType }
-     *     
+     * @return possible object is {@link WhiteSpaceCollapseType }
+     * 
      */
-    public WhiteSpaceCollapseType getWhiteSpaceCollapse() {
+    public WhiteSpaceCollapseType getWhiteSpaceCollapse()
+    {
         return whiteSpaceCollapse;
     }
 
@@ -1486,23 +1467,22 @@ public class Root {
      * Sets the value of the whiteSpaceCollapse property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WhiteSpaceCollapseType }
-     *     
+     *            allowed object is {@link WhiteSpaceCollapseType }
+     * 
      */
-    public void setWhiteSpaceCollapse(WhiteSpaceCollapseType value) {
+    public void setWhiteSpaceCollapse(WhiteSpaceCollapseType value)
+    {
         this.whiteSpaceCollapse = value;
     }
 
     /**
      * Gets the value of the widows property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getWidows() {
+    public String getWidows()
+    {
         return widows;
     }
 
@@ -1510,23 +1490,22 @@ public class Root {
      * Sets the value of the widows property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setWidows(String value) {
+    public void setWidows(String value)
+    {
         this.widows = value;
     }
 
     /**
      * Gets the value of the wrapOption property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WrapOptionType }
-     *     
+     * @return possible object is {@link WrapOptionType }
+     * 
      */
-    public WrapOptionType getWrapOption() {
+    public WrapOptionType getWrapOption()
+    {
         return wrapOption;
     }
 
@@ -1534,23 +1513,22 @@ public class Root {
      * Sets the value of the wrapOption property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WrapOptionType }
-     *     
+     *            allowed object is {@link WrapOptionType }
+     * 
      */
-    public void setWrapOption(WrapOptionType value) {
+    public void setWrapOption(WrapOptionType value)
+    {
         this.wrapOption = value;
     }
 
     /**
      * Gets the value of the autoRestore property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AutoRestoreType }
-     *     
+     * @return possible object is {@link AutoRestoreType }
+     * 
      */
-    public AutoRestoreType getAutoRestore() {
+    public AutoRestoreType getAutoRestore()
+    {
         return autoRestore;
     }
 
@@ -1558,11 +1536,11 @@ public class Root {
      * Sets the value of the autoRestore property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AutoRestoreType }
-     *     
+     *            allowed object is {@link AutoRestoreType }
+     * 
      */
-    public void setAutoRestore(AutoRestoreType value) {
+    public void setAutoRestore(AutoRestoreType value)
+    {
         this.autoRestore = value;
     }
 
@@ -1570,26 +1548,27 @@ public class Root {
      * Gets the value of the background property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the background property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the background property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBackground().add(newItem);
+     * getBackground().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getBackground() {
-        if (background == null) {
+    public List<String> getBackground()
+    {
+        if (background == null)
+        {
             background = new ArrayList<String>();
         }
         return this.background;
@@ -1598,12 +1577,11 @@ public class Root {
     /**
      * Gets the value of the borderSpacing property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderSpacing() {
+    public String getBorderSpacing()
+    {
         return borderSpacing;
     }
 
@@ -1611,23 +1589,22 @@ public class Root {
      * Sets the value of the borderSpacing property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderSpacing(String value) {
+    public void setBorderSpacing(String value)
+    {
         this.borderSpacing = value;
     }
 
     /**
      * Gets the value of the captionSide property.
      * 
-     * @return
-     *     possible object is
-     *     {@link CaptionSideType }
-     *     
+     * @return possible object is {@link CaptionSideType }
+     * 
      */
-    public CaptionSideType getCaptionSide() {
+    public CaptionSideType getCaptionSide()
+    {
         return captionSide;
     }
 
@@ -1635,23 +1612,22 @@ public class Root {
      * Sets the value of the captionSide property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link CaptionSideType }
-     *     
+     *            allowed object is {@link CaptionSideType }
+     * 
      */
-    public void setCaptionSide(CaptionSideType value) {
+    public void setCaptionSide(CaptionSideType value)
+    {
         this.captionSide = value;
     }
 
     /**
      * Gets the value of the direction property.
      * 
-     * @return
-     *     possible object is
-     *     {@link DirectionType }
-     *     
+     * @return possible object is {@link DirectionType }
+     * 
      */
-    public DirectionType getDirection() {
+    public DirectionType getDirection()
+    {
         return direction;
     }
 
@@ -1659,23 +1635,22 @@ public class Root {
      * Sets the value of the direction property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link DirectionType }
-     *     
+     *            allowed object is {@link DirectionType }
+     * 
      */
-    public void setDirection(DirectionType value) {
+    public void setDirection(DirectionType value)
+    {
         this.direction = value;
     }
 
     /**
      * Gets the value of the emptyCells property.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmptyCellsType }
-     *     
+     * @return possible object is {@link EmptyCellsType }
+     * 
      */
-    public EmptyCellsType getEmptyCells() {
+    public EmptyCellsType getEmptyCells()
+    {
         return emptyCells;
     }
 
@@ -1683,23 +1658,22 @@ public class Root {
      * Sets the value of the emptyCells property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link EmptyCellsType }
-     *     
+     *            allowed object is {@link EmptyCellsType }
+     * 
      */
-    public void setEmptyCells(EmptyCellsType value) {
+    public void setEmptyCells(EmptyCellsType value)
+    {
         this.emptyCells = value;
     }
 
     /**
      * Gets the value of the font property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFont() {
+    public String getFont()
+    {
         return font;
     }
 
@@ -1707,23 +1681,22 @@ public class Root {
      * Sets the value of the font property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFont(String value) {
+    public void setFont(String value)
+    {
         this.font = value;
     }
 
     /**
      * Gets the value of the fontSelectionStrategy property.
      * 
-     * @return
-     *     possible object is
-     *     {@link FontSelectionStrategyType }
-     *     
+     * @return possible object is {@link FontSelectionStrategyType }
+     * 
      */
-    public FontSelectionStrategyType getFontSelectionStrategy() {
+    public FontSelectionStrategyType getFontSelectionStrategy()
+    {
         return fontSelectionStrategy;
     }
 
@@ -1731,23 +1704,22 @@ public class Root {
      * Sets the value of the fontSelectionStrategy property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link FontSelectionStrategyType }
-     *     
+     *            allowed object is {@link FontSelectionStrategyType }
+     * 
      */
-    public void setFontSelectionStrategy(FontSelectionStrategyType value) {
+    public void setFontSelectionStrategy(FontSelectionStrategyType value)
+    {
         this.fontSelectionStrategy = value;
     }
 
     /**
      * Gets the value of the fontSizeAdjust property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontSizeAdjust() {
+    public String getFontSizeAdjust()
+    {
         return fontSizeAdjust;
     }
 
@@ -1755,23 +1727,22 @@ public class Root {
      * Sets the value of the fontSizeAdjust property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontSizeAdjust(String value) {
+    public void setFontSizeAdjust(String value)
+    {
         this.fontSizeAdjust = value;
     }
 
     /**
      * Gets the value of the fontStretch property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontStretch() {
+    public String getFontStretch()
+    {
         return fontStretch;
     }
 
@@ -1779,23 +1750,22 @@ public class Root {
      * Sets the value of the fontStretch property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontStretch(String value) {
+    public void setFontStretch(String value)
+    {
         this.fontStretch = value;
     }
 
     /**
      * Gets the value of the fontVariant property.
      * 
-     * @return
-     *     possible object is
-     *     {@link FontVariantType }
-     *     
+     * @return possible object is {@link FontVariantType }
+     * 
      */
-    public FontVariantType getFontVariant() {
+    public FontVariantType getFontVariant()
+    {
         return fontVariant;
     }
 
@@ -1803,23 +1773,22 @@ public class Root {
      * Sets the value of the fontVariant property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link FontVariantType }
-     *     
+     *            allowed object is {@link FontVariantType }
+     * 
      */
-    public void setFontVariant(FontVariantType value) {
+    public void setFontVariant(FontVariantType value)
+    {
         this.fontVariant = value;
     }
 
     /**
      * Gets the value of the glyphOrientationVertical property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getGlyphOrientationVertical() {
+    public String getGlyphOrientationVertical()
+    {
         return glyphOrientationVertical;
     }
 
@@ -1827,23 +1796,22 @@ public class Root {
      * Sets the value of the glyphOrientationVertical property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setGlyphOrientationVertical(String value) {
+    public void setGlyphOrientationVertical(String value)
+    {
         this.glyphOrientationVertical = value;
     }
 
     /**
      * Gets the value of the glyphOrientationHorizontal property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getGlyphOrientationHorizontal() {
+    public String getGlyphOrientationHorizontal()
+    {
         return glyphOrientationHorizontal;
     }
 
@@ -1851,23 +1819,22 @@ public class Root {
      * Sets the value of the glyphOrientationHorizontal property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setGlyphOrientationHorizontal(String value) {
+    public void setGlyphOrientationHorizontal(String value)
+    {
         this.glyphOrientationHorizontal = value;
     }
 
     /**
      * Gets the value of the hyphenationKeep property.
      * 
-     * @return
-     *     possible object is
-     *     {@link HyphenationKeepType }
-     *     
+     * @return possible object is {@link HyphenationKeepType }
+     * 
      */
-    public HyphenationKeepType getHyphenationKeep() {
+    public HyphenationKeepType getHyphenationKeep()
+    {
         return hyphenationKeep;
     }
 
@@ -1875,23 +1842,22 @@ public class Root {
      * Sets the value of the hyphenationKeep property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link HyphenationKeepType }
-     *     
+     *            allowed object is {@link HyphenationKeepType }
+     * 
      */
-    public void setHyphenationKeep(HyphenationKeepType value) {
+    public void setHyphenationKeep(HyphenationKeepType value)
+    {
         this.hyphenationKeep = value;
     }
 
     /**
      * Gets the value of the hyphenationLadderCount property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getHyphenationLadderCount() {
+    public String getHyphenationLadderCount()
+    {
         return hyphenationLadderCount;
     }
 
@@ -1899,23 +1865,22 @@ public class Root {
      * Sets the value of the hyphenationLadderCount property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setHyphenationLadderCount(String value) {
+    public void setHyphenationLadderCount(String value)
+    {
         this.hyphenationLadderCount = value;
     }
 
     /**
      * Gets the value of the intrusionDisplace property.
      * 
-     * @return
-     *     possible object is
-     *     {@link DisplaceType }
-     *     
+     * @return possible object is {@link DisplaceType }
+     * 
      */
-    public DisplaceType getIntrusionDisplace() {
+    public DisplaceType getIntrusionDisplace()
+    {
         return intrusionDisplace;
     }
 
@@ -1923,23 +1888,22 @@ public class Root {
      * Sets the value of the intrusionDisplace property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link DisplaceType }
-     *     
+     *            allowed object is {@link DisplaceType }
+     * 
      */
-    public void setIntrusionDisplace(DisplaceType value) {
+    public void setIntrusionDisplace(DisplaceType value)
+    {
         this.intrusionDisplace = value;
     }
 
     /**
      * Gets the value of the lastLineEndIndent property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLastLineEndIndent() {
+    public String getLastLineEndIndent()
+    {
         return lastLineEndIndent;
     }
 
@@ -1947,23 +1911,22 @@ public class Root {
      * Sets the value of the lastLineEndIndent property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLastLineEndIndent(String value) {
+    public void setLastLineEndIndent(String value)
+    {
         this.lastLineEndIndent = value;
     }
 
     /**
      * Gets the value of the lineHeightShiftAdjustment property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LineHeightShiftAdjustmentType }
-     *     
+     * @return possible object is {@link LineHeightShiftAdjustmentType }
+     * 
      */
-    public LineHeightShiftAdjustmentType getLineHeightShiftAdjustment() {
+    public LineHeightShiftAdjustmentType getLineHeightShiftAdjustment()
+    {
         return lineHeightShiftAdjustment;
     }
 
@@ -1971,23 +1934,22 @@ public class Root {
      * Sets the value of the lineHeightShiftAdjustment property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LineHeightShiftAdjustmentType }
-     *     
+     *            allowed object is {@link LineHeightShiftAdjustmentType }
+     * 
      */
-    public void setLineHeightShiftAdjustment(LineHeightShiftAdjustmentType value) {
+    public void setLineHeightShiftAdjustment(LineHeightShiftAdjustmentType value)
+    {
         this.lineHeightShiftAdjustment = value;
     }
 
     /**
      * Gets the value of the lineStackingStrategy property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LineStackingStrategyType }
-     *     
+     * @return possible object is {@link LineStackingStrategyType }
+     * 
      */
-    public LineStackingStrategyType getLineStackingStrategy() {
+    public LineStackingStrategyType getLineStackingStrategy()
+    {
         return lineStackingStrategy;
     }
 
@@ -1995,23 +1957,22 @@ public class Root {
      * Sets the value of the lineStackingStrategy property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LineStackingStrategyType }
-     *     
+     *            allowed object is {@link LineStackingStrategyType }
+     * 
      */
-    public void setLineStackingStrategy(LineStackingStrategyType value) {
+    public void setLineStackingStrategy(LineStackingStrategyType value)
+    {
         this.lineStackingStrategy = value;
     }
 
     /**
      * Gets the value of the linefeedTreatment property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LinefeedTreatmentType }
-     *     
+     * @return possible object is {@link LinefeedTreatmentType }
+     * 
      */
-    public LinefeedTreatmentType getLinefeedTreatment() {
+    public LinefeedTreatmentType getLinefeedTreatment()
+    {
         return linefeedTreatment;
     }
 
@@ -2019,11 +1980,11 @@ public class Root {
      * Sets the value of the linefeedTreatment property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LinefeedTreatmentType }
-     *     
+     *            allowed object is {@link LinefeedTreatmentType }
+     * 
      */
-    public void setLinefeedTreatment(LinefeedTreatmentType value) {
+    public void setLinefeedTreatment(LinefeedTreatmentType value)
+    {
         this.linefeedTreatment = value;
     }
 
@@ -2031,26 +1992,27 @@ public class Root {
      * Gets the value of the margin property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the margin property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the margin property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getMargin().add(newItem);
+     * getMargin().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getMargin() {
-        if (margin == null) {
+    public List<String> getMargin()
+    {
+        if (margin == null)
+        {
             margin = new ArrayList<String>();
         }
         return this.margin;
@@ -2059,12 +2021,11 @@ public class Root {
     /**
      * Gets the value of the maxWidth property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMaxWidth() {
+    public String getMaxWidth()
+    {
         return maxWidth;
     }
 
@@ -2072,23 +2033,22 @@ public class Root {
      * Sets the value of the maxWidth property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMaxWidth(String value) {
+    public void setMaxWidth(String value)
+    {
         this.maxWidth = value;
     }
 
     /**
      * Gets the value of the minHeight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMinHeight() {
+    public String getMinHeight()
+    {
         return minHeight;
     }
 
@@ -2096,23 +2056,22 @@ public class Root {
      * Sets the value of the minHeight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMinHeight(String value) {
+    public void setMinHeight(String value)
+    {
         this.minHeight = value;
     }
 
     /**
      * Gets the value of the minWidth property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMinWidth() {
+    public String getMinWidth()
+    {
         return minWidth;
     }
 
@@ -2120,23 +2079,22 @@ public class Root {
      * Sets the value of the minWidth property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMinWidth(String value) {
+    public void setMinWidth(String value)
+    {
         this.minWidth = value;
     }
 
     /**
      * Gets the value of the pageBreakInside property.
      * 
-     * @return
-     *     possible object is
-     *     {@link PageBreakInsideType }
-     *     
+     * @return possible object is {@link PageBreakInsideType }
+     * 
      */
-    public PageBreakInsideType getPageBreakInside() {
+    public PageBreakInsideType getPageBreakInside()
+    {
         return pageBreakInside;
     }
 
@@ -2144,23 +2102,22 @@ public class Root {
      * Sets the value of the pageBreakInside property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link PageBreakInsideType }
-     *     
+     *            allowed object is {@link PageBreakInsideType }
+     * 
      */
-    public void setPageBreakInside(PageBreakInsideType value) {
+    public void setPageBreakInside(PageBreakInsideType value)
+    {
         this.pageBreakInside = value;
     }
 
     /**
      * Gets the value of the referenceOrientation property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getReferenceOrientation() {
+    public String getReferenceOrientation()
+    {
         return referenceOrientation;
     }
 
@@ -2168,23 +2125,22 @@ public class Root {
      * Sets the value of the referenceOrientation property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setReferenceOrientation(String value) {
+    public void setReferenceOrientation(String value)
+    {
         this.referenceOrientation = value;
     }
 
     /**
      * Gets the value of the scoreSpaces property.
      * 
-     * @return
-     *     possible object is
-     *     {@link ScoreSpacesType }
-     *     
+     * @return possible object is {@link ScoreSpacesType }
+     * 
      */
-    public ScoreSpacesType getScoreSpaces() {
+    public ScoreSpacesType getScoreSpaces()
+    {
         return scoreSpaces;
     }
 
@@ -2192,23 +2148,22 @@ public class Root {
      * Sets the value of the scoreSpaces property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link ScoreSpacesType }
-     *     
+     *            allowed object is {@link ScoreSpacesType }
+     * 
      */
-    public void setScoreSpaces(ScoreSpacesType value) {
+    public void setScoreSpaces(ScoreSpacesType value)
+    {
         this.scoreSpaces = value;
     }
 
     /**
      * Gets the value of the script property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getScript() {
+    public String getScript()
+    {
         return script;
     }
 
@@ -2216,23 +2171,22 @@ public class Root {
      * Sets the value of the script property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setScript(String value) {
+    public void setScript(String value)
+    {
         this.script = value;
     }
 
     /**
      * Gets the value of the textTransform property.
      * 
-     * @return
-     *     possible object is
-     *     {@link TextTransformType }
-     *     
+     * @return possible object is {@link TextTransformType }
+     * 
      */
-    public TextTransformType getTextTransform() {
+    public TextTransformType getTextTransform()
+    {
         return textTransform;
     }
 
@@ -2240,23 +2194,22 @@ public class Root {
      * Sets the value of the textTransform property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link TextTransformType }
-     *     
+     *            allowed object is {@link TextTransformType }
+     * 
      */
-    public void setTextTransform(TextTransformType value) {
+    public void setTextTransform(TextTransformType value)
+    {
         this.textTransform = value;
     }
 
     /**
      * Gets the value of the visibility property.
      * 
-     * @return
-     *     possible object is
-     *     {@link VisibilityType }
-     *     
+     * @return possible object is {@link VisibilityType }
+     * 
      */
-    public VisibilityType getVisibility() {
+    public VisibilityType getVisibility()
+    {
         return visibility;
     }
 
@@ -2264,23 +2217,22 @@ public class Root {
      * Sets the value of the visibility property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link VisibilityType }
-     *     
+     *            allowed object is {@link VisibilityType }
+     * 
      */
-    public void setVisibility(VisibilityType value) {
+    public void setVisibility(VisibilityType value)
+    {
         this.visibility = value;
     }
 
     /**
      * Gets the value of the whiteSpace property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WhiteSpaceType }
-     *     
+     * @return possible object is {@link WhiteSpaceType }
+     * 
      */
-    public WhiteSpaceType getWhiteSpace() {
+    public WhiteSpaceType getWhiteSpace()
+    {
         return whiteSpace;
     }
 
@@ -2288,23 +2240,22 @@ public class Root {
      * Sets the value of the whiteSpace property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WhiteSpaceType }
-     *     
+     *            allowed object is {@link WhiteSpaceType }
+     * 
      */
-    public void setWhiteSpace(WhiteSpaceType value) {
+    public void setWhiteSpace(WhiteSpaceType value)
+    {
         this.whiteSpace = value;
     }
 
     /**
      * Gets the value of the whiteSpaceTreatment property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WhiteSpaceTreatmentType }
-     *     
+     * @return possible object is {@link WhiteSpaceTreatmentType }
+     * 
      */
-    public WhiteSpaceTreatmentType getWhiteSpaceTreatment() {
+    public WhiteSpaceTreatmentType getWhiteSpaceTreatment()
+    {
         return whiteSpaceTreatment;
     }
 
@@ -2312,23 +2263,22 @@ public class Root {
      * Sets the value of the whiteSpaceTreatment property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WhiteSpaceTreatmentType }
-     *     
+     *            allowed object is {@link WhiteSpaceTreatmentType }
+     * 
      */
-    public void setWhiteSpaceTreatment(WhiteSpaceTreatmentType value) {
+    public void setWhiteSpaceTreatment(WhiteSpaceTreatmentType value)
+    {
         this.whiteSpaceTreatment = value;
     }
 
     /**
      * Gets the value of the wordSpacing property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getWordSpacing() {
+    public String getWordSpacing()
+    {
         return wordSpacing;
     }
 
@@ -2336,23 +2286,22 @@ public class Root {
      * Sets the value of the wordSpacing property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setWordSpacing(String value) {
+    public void setWordSpacing(String value)
+    {
         this.wordSpacing = value;
     }
 
     /**
      * Gets the value of the writingMode property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WritingModeType }
-     *     
+     * @return possible object is {@link WritingModeType }
+     * 
      */
-    public WritingModeType getWritingMode() {
+    public WritingModeType getWritingMode()
+    {
         return writingMode;
     }
 
@@ -2360,44 +2309,53 @@ public class Root {
      * Sets the value of the writingMode property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WritingModeType }
-     *     
+     *            allowed object is {@link WritingModeType }
+     * 
      */
-    public void setWritingMode(WritingModeType value) {
+    public void setWritingMode(WritingModeType value)
+    {
         this.writingMode = value;
     }
 
-    public LayoutMasterSet withLayoutMasterSet() {
-        if (this.layoutMasterSet == null) {
-            layoutMasterSet = new LayoutMasterSet();
+    public LayoutMasterSet withLayoutMasterSet()
+    {
+        if (this.layoutMasterSet == null)
+        {
+            layoutMasterSet = new LayoutMasterSet(style);
         }
         return layoutMasterSet;
     }
 
-    public Declarations withDeclarations() {
-        if (this.declarations == null) {
+    public Declarations withDeclarations()
+    {
+        if (this.declarations == null)
+        {
             declarations = new Declarations();
         }
         return declarations;
     }
 
-    public PageSequence withPageSequence(int index) {
+    public PageSequence withPageSequence(int index)
+    {
         List<PageSequence> list = this.getPageSequence();
-        if (list.size()<= index) {
-            for (int i = list.size(); (i<= index); i ++) {
+        if (list.size() <= index)
+        {
+            for (int i = list.size(); (i <= index); i++)
+            {
                 list.add(null);
             }
         }
         PageSequence value = list.get(index);
-        if (value == null) {
+        if (value == null)
+        {
             value = new PageSequence();
             list.set(index, value);
         }
         return value;
     }
 
-    public PageSequence withNewPageSequence() {
+    public PageSequence withNewPageSequence()
+    {
         PageSequence value = new PageSequence();
         this.getPageSequence().add(value);
         return value;

@@ -5,7 +5,6 @@
 // Generated on: 2011.10.13 at 06:06:38 PM CEST 
 //
 
-
 package es.uji.apps.fopreports.fop;
 
 import java.util.ArrayList;
@@ -15,15 +14,19 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import es.uji.apps.fopreports.style.ReportStyle;
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -50,15 +53,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "regionBody",
-    "regionBefore",
-    "regionAfter",
-    "regionStart",
-    "regionEnd"
-})
+@XmlType(name = "", propOrder = { "regionBody", "regionBefore", "regionAfter", "regionStart",
+        "regionEnd" })
 @XmlRootElement(name = "simple-page-master")
-public class SimplePageMaster {
+public class SimplePageMaster
+{
 
     @XmlElement(name = "region-body", required = true)
     protected RegionBody regionBody;
@@ -283,16 +282,29 @@ public class SimplePageMaster {
     protected ConditionalityType spaceAfterConditionality;
     @XmlAttribute(name = "space-after.precedence")
     protected String spaceAfterPrecedence;
+    
+    @XmlTransient   
+    private ReportStyle style;
+
+    public SimplePageMaster()
+    {
+    }
+    
+    public SimplePageMaster(ReportStyle style)
+    {
+        this.style = style;
+        
+        setStyles(style);
+    }
 
     /**
      * Gets the value of the regionBody property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RegionBody }
-     *     
+     * @return possible object is {@link RegionBody }
+     * 
      */
-    public RegionBody getRegionBody() {
+    public RegionBody getRegionBody()
+    {
         return regionBody;
     }
 
@@ -300,23 +312,22 @@ public class SimplePageMaster {
      * Sets the value of the regionBody property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RegionBody }
-     *     
+     *            allowed object is {@link RegionBody }
+     * 
      */
-    public void setRegionBody(RegionBody value) {
+    public void setRegionBody(RegionBody value)
+    {
         this.regionBody = value;
     }
 
     /**
      * Gets the value of the regionBefore property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RegionBefore }
-     *     
+     * @return possible object is {@link RegionBefore }
+     * 
      */
-    public RegionBefore getRegionBefore() {
+    public RegionBefore getRegionBefore()
+    {
         return regionBefore;
     }
 
@@ -324,23 +335,22 @@ public class SimplePageMaster {
      * Sets the value of the regionBefore property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RegionBefore }
-     *     
+     *            allowed object is {@link RegionBefore }
+     * 
      */
-    public void setRegionBefore(RegionBefore value) {
+    public void setRegionBefore(RegionBefore value)
+    {
         this.regionBefore = value;
     }
 
     /**
      * Gets the value of the regionAfter property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RegionAfter }
-     *     
+     * @return possible object is {@link RegionAfter }
+     * 
      */
-    public RegionAfter getRegionAfter() {
+    public RegionAfter getRegionAfter()
+    {
         return regionAfter;
     }
 
@@ -348,23 +358,22 @@ public class SimplePageMaster {
      * Sets the value of the regionAfter property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RegionAfter }
-     *     
+     *            allowed object is {@link RegionAfter }
+     * 
      */
-    public void setRegionAfter(RegionAfter value) {
+    public void setRegionAfter(RegionAfter value)
+    {
         this.regionAfter = value;
     }
 
     /**
      * Gets the value of the regionStart property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RegionStart }
-     *     
+     * @return possible object is {@link RegionStart }
+     * 
      */
-    public RegionStart getRegionStart() {
+    public RegionStart getRegionStart()
+    {
         return regionStart;
     }
 
@@ -372,23 +381,22 @@ public class SimplePageMaster {
      * Sets the value of the regionStart property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RegionStart }
-     *     
+     *            allowed object is {@link RegionStart }
+     * 
      */
-    public void setRegionStart(RegionStart value) {
+    public void setRegionStart(RegionStart value)
+    {
         this.regionStart = value;
     }
 
     /**
      * Gets the value of the regionEnd property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RegionEnd }
-     *     
+     * @return possible object is {@link RegionEnd }
+     * 
      */
-    public RegionEnd getRegionEnd() {
+    public RegionEnd getRegionEnd()
+    {
         return regionEnd;
     }
 
@@ -396,23 +404,22 @@ public class SimplePageMaster {
      * Sets the value of the regionEnd property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RegionEnd }
-     *     
+     *            allowed object is {@link RegionEnd }
+     * 
      */
-    public void setRegionEnd(RegionEnd value) {
+    public void setRegionEnd(RegionEnd value)
+    {
         this.regionEnd = value;
     }
 
     /**
      * Gets the value of the masterName property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMasterName() {
+    public String getMasterName()
+    {
         return masterName;
     }
 
@@ -420,23 +427,22 @@ public class SimplePageMaster {
      * Sets the value of the masterName property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMasterName(String value) {
+    public void setMasterName(String value)
+    {
         this.masterName = value;
     }
 
     /**
      * Gets the value of the pageHeight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getPageHeight() {
+    public String getPageHeight()
+    {
         return pageHeight;
     }
 
@@ -444,23 +450,22 @@ public class SimplePageMaster {
      * Sets the value of the pageHeight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setPageHeight(String value) {
+    public void setPageHeight(String value)
+    {
         this.pageHeight = value;
     }
 
     /**
      * Gets the value of the pageWidth property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getPageWidth() {
+    public String getPageWidth()
+    {
         return pageWidth;
     }
 
@@ -468,23 +473,22 @@ public class SimplePageMaster {
      * Sets the value of the pageWidth property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setPageWidth(String value) {
+    public void setPageWidth(String value)
+    {
         this.pageWidth = value;
     }
 
     /**
      * Gets the value of the borderBottom property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderBottom() {
+    public String getBorderBottom()
+    {
         return borderBottom;
     }
 
@@ -492,23 +496,22 @@ public class SimplePageMaster {
      * Sets the value of the borderBottom property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderBottom(String value) {
+    public void setBorderBottom(String value)
+    {
         this.borderBottom = value;
     }
 
     /**
      * Gets the value of the borderCollapse property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BorderCollapseType }
-     *     
+     * @return possible object is {@link BorderCollapseType }
+     * 
      */
-    public BorderCollapseType getBorderCollapse() {
+    public BorderCollapseType getBorderCollapse()
+    {
         return borderCollapse;
     }
 
@@ -516,11 +519,11 @@ public class SimplePageMaster {
      * Sets the value of the borderCollapse property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link BorderCollapseType }
-     *     
+     *            allowed object is {@link BorderCollapseType }
+     * 
      */
-    public void setBorderCollapse(BorderCollapseType value) {
+    public void setBorderCollapse(BorderCollapseType value)
+    {
         this.borderCollapse = value;
     }
 
@@ -528,26 +531,27 @@ public class SimplePageMaster {
      * Gets the value of the borderColor property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the borderColor property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the borderColor property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBorderColor().add(newItem);
+     * getBorderColor().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getBorderColor() {
-        if (borderColor == null) {
+    public List<String> getBorderColor()
+    {
+        if (borderColor == null)
+        {
             borderColor = new ArrayList<String>();
         }
         return this.borderColor;
@@ -556,12 +560,11 @@ public class SimplePageMaster {
     /**
      * Gets the value of the borderLeft property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderLeft() {
+    public String getBorderLeft()
+    {
         return borderLeft;
     }
 
@@ -569,23 +572,22 @@ public class SimplePageMaster {
      * Sets the value of the borderLeft property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderLeft(String value) {
+    public void setBorderLeft(String value)
+    {
         this.borderLeft = value;
     }
 
     /**
      * Gets the value of the borderRight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderRight() {
+    public String getBorderRight()
+    {
         return borderRight;
     }
 
@@ -593,11 +595,11 @@ public class SimplePageMaster {
      * Sets the value of the borderRight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderRight(String value) {
+    public void setBorderRight(String value)
+    {
         this.borderRight = value;
     }
 
@@ -605,26 +607,27 @@ public class SimplePageMaster {
      * Gets the value of the borderSeparation property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the borderSeparation property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the borderSeparation property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBorderSeparation().add(newItem);
+     * getBorderSeparation().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getBorderSeparation() {
-        if (borderSeparation == null) {
+    public List<String> getBorderSeparation()
+    {
+        if (borderSeparation == null)
+        {
             borderSeparation = new ArrayList<String>();
         }
         return this.borderSeparation;
@@ -634,26 +637,27 @@ public class SimplePageMaster {
      * Gets the value of the borderStyle property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the borderStyle property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the borderStyle property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBorderStyle().add(newItem);
+     * getBorderStyle().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link BorderStyleType }
+     * Objects of the following type(s) are allowed in the list {@link BorderStyleType }
      * 
      * 
      */
-    public List<BorderStyleType> getBorderStyle() {
-        if (borderStyle == null) {
+    public List<BorderStyleType> getBorderStyle()
+    {
+        if (borderStyle == null)
+        {
             borderStyle = new ArrayList<BorderStyleType>();
         }
         return this.borderStyle;
@@ -662,12 +666,11 @@ public class SimplePageMaster {
     /**
      * Gets the value of the borderTop property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderTop() {
+    public String getBorderTop()
+    {
         return borderTop;
     }
 
@@ -675,11 +678,11 @@ public class SimplePageMaster {
      * Sets the value of the borderTop property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderTop(String value) {
+    public void setBorderTop(String value)
+    {
         this.borderTop = value;
     }
 
@@ -687,26 +690,27 @@ public class SimplePageMaster {
      * Gets the value of the borderWidth property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the borderWidth property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the borderWidth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBorderWidth().add(newItem);
+     * getBorderWidth().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getBorderWidth() {
-        if (borderWidth == null) {
+    public List<String> getBorderWidth()
+    {
+        if (borderWidth == null)
+        {
             borderWidth = new ArrayList<String>();
         }
         return this.borderWidth;
@@ -715,12 +719,11 @@ public class SimplePageMaster {
     /**
      * Gets the value of the color property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getColor() {
+    public String getColor()
+    {
         return color;
     }
 
@@ -728,23 +731,22 @@ public class SimplePageMaster {
      * Sets the value of the color property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setColor(String value) {
+    public void setColor(String value)
+    {
         this.color = value;
     }
 
     /**
      * Gets the value of the country property.
      * 
-     * @return
-     *     possible object is
-     *     {@link CountryType }
-     *     
+     * @return possible object is {@link CountryType }
+     * 
      */
-    public CountryType getCountry() {
+    public CountryType getCountry()
+    {
         return country;
     }
 
@@ -752,23 +754,22 @@ public class SimplePageMaster {
      * Sets the value of the country property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link CountryType }
-     *     
+     *            allowed object is {@link CountryType }
+     * 
      */
-    public void setCountry(CountryType value) {
+    public void setCountry(CountryType value)
+    {
         this.country = value;
     }
 
     /**
      * Gets the value of the displayAlign property.
      * 
-     * @return
-     *     possible object is
-     *     {@link DisplayAlignType }
-     *     
+     * @return possible object is {@link DisplayAlignType }
+     * 
      */
-    public DisplayAlignType getDisplayAlign() {
+    public DisplayAlignType getDisplayAlign()
+    {
         return displayAlign;
     }
 
@@ -776,23 +777,22 @@ public class SimplePageMaster {
      * Sets the value of the displayAlign property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link DisplayAlignType }
-     *     
+     *            allowed object is {@link DisplayAlignType }
+     * 
      */
-    public void setDisplayAlign(DisplayAlignType value) {
+    public void setDisplayAlign(DisplayAlignType value)
+    {
         this.displayAlign = value;
     }
 
     /**
      * Gets the value of the endIndent property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getEndIndent() {
+    public String getEndIndent()
+    {
         return endIndent;
     }
 
@@ -800,23 +800,22 @@ public class SimplePageMaster {
      * Sets the value of the endIndent property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setEndIndent(String value) {
+    public void setEndIndent(String value)
+    {
         this.endIndent = value;
     }
 
     /**
      * Gets the value of the fontFamily property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontFamily() {
+    public String getFontFamily()
+    {
         return fontFamily;
     }
 
@@ -824,23 +823,22 @@ public class SimplePageMaster {
      * Sets the value of the fontFamily property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontFamily(String value) {
+    public void setFontFamily(String value)
+    {
         this.fontFamily = value;
     }
 
     /**
      * Gets the value of the fontSize property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontSize() {
+    public String getFontSize()
+    {
         return fontSize;
     }
 
@@ -848,23 +846,22 @@ public class SimplePageMaster {
      * Sets the value of the fontSize property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontSize(String value) {
+    public void setFontSize(String value)
+    {
         this.fontSize = value;
     }
 
     /**
      * Gets the value of the fontStyle property.
      * 
-     * @return
-     *     possible object is
-     *     {@link FontStyleType }
-     *     
+     * @return possible object is {@link FontStyleType }
+     * 
      */
-    public FontStyleType getFontStyle() {
+    public FontStyleType getFontStyle()
+    {
         return fontStyle;
     }
 
@@ -872,23 +869,22 @@ public class SimplePageMaster {
      * Sets the value of the fontStyle property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link FontStyleType }
-     *     
+     *            allowed object is {@link FontStyleType }
+     * 
      */
-    public void setFontStyle(FontStyleType value) {
+    public void setFontStyle(FontStyleType value)
+    {
         this.fontStyle = value;
     }
 
     /**
      * Gets the value of the fontWeight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontWeight() {
+    public String getFontWeight()
+    {
         return fontWeight;
     }
 
@@ -896,23 +892,22 @@ public class SimplePageMaster {
      * Sets the value of the fontWeight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontWeight(String value) {
+    public void setFontWeight(String value)
+    {
         this.fontWeight = value;
     }
 
     /**
      * Gets the value of the hyphenate property.
      * 
-     * @return
-     *     possible object is
-     *     {@link HyphenateType }
-     *     
+     * @return possible object is {@link HyphenateType }
+     * 
      */
-    public HyphenateType getHyphenate() {
+    public HyphenateType getHyphenate()
+    {
         return hyphenate;
     }
 
@@ -920,23 +915,22 @@ public class SimplePageMaster {
      * Sets the value of the hyphenate property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link HyphenateType }
-     *     
+     *            allowed object is {@link HyphenateType }
+     * 
      */
-    public void setHyphenate(HyphenateType value) {
+    public void setHyphenate(HyphenateType value)
+    {
         this.hyphenate = value;
     }
 
     /**
      * Gets the value of the hyphenationCharacter property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getHyphenationCharacter() {
+    public String getHyphenationCharacter()
+    {
         return hyphenationCharacter;
     }
 
@@ -944,23 +938,22 @@ public class SimplePageMaster {
      * Sets the value of the hyphenationCharacter property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setHyphenationCharacter(String value) {
+    public void setHyphenationCharacter(String value)
+    {
         this.hyphenationCharacter = value;
     }
 
     /**
      * Gets the value of the hyphenationPushCharacterCount property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getHyphenationPushCharacterCount() {
+    public String getHyphenationPushCharacterCount()
+    {
         return hyphenationPushCharacterCount;
     }
 
@@ -968,23 +961,22 @@ public class SimplePageMaster {
      * Sets the value of the hyphenationPushCharacterCount property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setHyphenationPushCharacterCount(String value) {
+    public void setHyphenationPushCharacterCount(String value)
+    {
         this.hyphenationPushCharacterCount = value;
     }
 
     /**
      * Gets the value of the hyphenationRemainCharacterCount property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getHyphenationRemainCharacterCount() {
+    public String getHyphenationRemainCharacterCount()
+    {
         return hyphenationRemainCharacterCount;
     }
 
@@ -992,11 +984,11 @@ public class SimplePageMaster {
      * Sets the value of the hyphenationRemainCharacterCount property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setHyphenationRemainCharacterCount(String value) {
+    public void setHyphenationRemainCharacterCount(String value)
+    {
         this.hyphenationRemainCharacterCount = value;
     }
 
@@ -1004,26 +996,27 @@ public class SimplePageMaster {
      * Gets the value of the keepTogether property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the keepTogether property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the keepTogether property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getKeepTogether().add(newItem);
+     * getKeepTogether().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getKeepTogether() {
-        if (keepTogether == null) {
+    public List<String> getKeepTogether()
+    {
+        if (keepTogether == null)
+        {
             keepTogether = new ArrayList<String>();
         }
         return this.keepTogether;
@@ -1032,12 +1025,11 @@ public class SimplePageMaster {
     /**
      * Gets the value of the keepTogetherWithinColumn property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getKeepTogetherWithinColumn() {
+    public String getKeepTogetherWithinColumn()
+    {
         return keepTogetherWithinColumn;
     }
 
@@ -1045,23 +1037,22 @@ public class SimplePageMaster {
      * Sets the value of the keepTogetherWithinColumn property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setKeepTogetherWithinColumn(String value) {
+    public void setKeepTogetherWithinColumn(String value)
+    {
         this.keepTogetherWithinColumn = value;
     }
 
     /**
      * Gets the value of the keepTogetherWithinLine property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getKeepTogetherWithinLine() {
+    public String getKeepTogetherWithinLine()
+    {
         return keepTogetherWithinLine;
     }
 
@@ -1069,23 +1060,22 @@ public class SimplePageMaster {
      * Sets the value of the keepTogetherWithinLine property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setKeepTogetherWithinLine(String value) {
+    public void setKeepTogetherWithinLine(String value)
+    {
         this.keepTogetherWithinLine = value;
     }
 
     /**
      * Gets the value of the keepTogetherWithinPage property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getKeepTogetherWithinPage() {
+    public String getKeepTogetherWithinPage()
+    {
         return keepTogetherWithinPage;
     }
 
@@ -1093,23 +1083,22 @@ public class SimplePageMaster {
      * Sets the value of the keepTogetherWithinPage property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setKeepTogetherWithinPage(String value) {
+    public void setKeepTogetherWithinPage(String value)
+    {
         this.keepTogetherWithinPage = value;
     }
 
     /**
      * Gets the value of the language property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LanguageType }
-     *     
+     * @return possible object is {@link LanguageType }
+     * 
      */
-    public LanguageType getLanguage() {
+    public LanguageType getLanguage()
+    {
         return language;
     }
 
@@ -1117,23 +1106,22 @@ public class SimplePageMaster {
      * Sets the value of the language property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LanguageType }
-     *     
+     *            allowed object is {@link LanguageType }
+     * 
      */
-    public void setLanguage(LanguageType value) {
+    public void setLanguage(LanguageType value)
+    {
         this.language = value;
     }
 
     /**
      * Gets the value of the leaderAlignment property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LeaderAlignmentType }
-     *     
+     * @return possible object is {@link LeaderAlignmentType }
+     * 
      */
-    public LeaderAlignmentType getLeaderAlignment() {
+    public LeaderAlignmentType getLeaderAlignment()
+    {
         return leaderAlignment;
     }
 
@@ -1141,11 +1129,11 @@ public class SimplePageMaster {
      * Sets the value of the leaderAlignment property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LeaderAlignmentType }
-     *     
+     *            allowed object is {@link LeaderAlignmentType }
+     * 
      */
-    public void setLeaderAlignment(LeaderAlignmentType value) {
+    public void setLeaderAlignment(LeaderAlignmentType value)
+    {
         this.leaderAlignment = value;
     }
 
@@ -1153,26 +1141,27 @@ public class SimplePageMaster {
      * Gets the value of the leaderLength property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the leaderLength property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the leaderLength property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getLeaderLength().add(newItem);
+     * getLeaderLength().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getLeaderLength() {
-        if (leaderLength == null) {
+    public List<String> getLeaderLength()
+    {
+        if (leaderLength == null)
+        {
             leaderLength = new ArrayList<String>();
         }
         return this.leaderLength;
@@ -1181,12 +1170,11 @@ public class SimplePageMaster {
     /**
      * Gets the value of the leaderLengthMaximum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLeaderLengthMaximum() {
+    public String getLeaderLengthMaximum()
+    {
         return leaderLengthMaximum;
     }
 
@@ -1194,23 +1182,22 @@ public class SimplePageMaster {
      * Sets the value of the leaderLengthMaximum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLeaderLengthMaximum(String value) {
+    public void setLeaderLengthMaximum(String value)
+    {
         this.leaderLengthMaximum = value;
     }
 
     /**
      * Gets the value of the leaderLengthMinimum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLeaderLengthMinimum() {
+    public String getLeaderLengthMinimum()
+    {
         return leaderLengthMinimum;
     }
 
@@ -1218,23 +1205,22 @@ public class SimplePageMaster {
      * Sets the value of the leaderLengthMinimum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLeaderLengthMinimum(String value) {
+    public void setLeaderLengthMinimum(String value)
+    {
         this.leaderLengthMinimum = value;
     }
 
     /**
      * Gets the value of the leaderLengthOptimum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLeaderLengthOptimum() {
+    public String getLeaderLengthOptimum()
+    {
         return leaderLengthOptimum;
     }
 
@@ -1242,23 +1228,22 @@ public class SimplePageMaster {
      * Sets the value of the leaderLengthOptimum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLeaderLengthOptimum(String value) {
+    public void setLeaderLengthOptimum(String value)
+    {
         this.leaderLengthOptimum = value;
     }
 
     /**
      * Gets the value of the leaderPattern property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LeaderPatternType }
-     *     
+     * @return possible object is {@link LeaderPatternType }
+     * 
      */
-    public LeaderPatternType getLeaderPattern() {
+    public LeaderPatternType getLeaderPattern()
+    {
         return leaderPattern;
     }
 
@@ -1266,23 +1251,22 @@ public class SimplePageMaster {
      * Sets the value of the leaderPattern property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LeaderPatternType }
-     *     
+     *            allowed object is {@link LeaderPatternType }
+     * 
      */
-    public void setLeaderPattern(LeaderPatternType value) {
+    public void setLeaderPattern(LeaderPatternType value)
+    {
         this.leaderPattern = value;
     }
 
     /**
      * Gets the value of the leaderPatternWidth property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLeaderPatternWidth() {
+    public String getLeaderPatternWidth()
+    {
         return leaderPatternWidth;
     }
 
@@ -1290,23 +1274,22 @@ public class SimplePageMaster {
      * Sets the value of the leaderPatternWidth property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLeaderPatternWidth(String value) {
+    public void setLeaderPatternWidth(String value)
+    {
         this.leaderPatternWidth = value;
     }
 
     /**
      * Gets the value of the letterSpacing property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLetterSpacing() {
+    public String getLetterSpacing()
+    {
         return letterSpacing;
     }
 
@@ -1314,23 +1297,22 @@ public class SimplePageMaster {
      * Sets the value of the letterSpacing property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLetterSpacing(String value) {
+    public void setLetterSpacing(String value)
+    {
         this.letterSpacing = value;
     }
 
     /**
      * Gets the value of the lineHeight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLineHeight() {
+    public String getLineHeight()
+    {
         return lineHeight;
     }
 
@@ -1338,23 +1320,22 @@ public class SimplePageMaster {
      * Sets the value of the lineHeight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLineHeight(String value) {
+    public void setLineHeight(String value)
+    {
         this.lineHeight = value;
     }
 
     /**
      * Gets the value of the orphans property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getOrphans() {
+    public String getOrphans()
+    {
         return orphans;
     }
 
@@ -1362,23 +1343,22 @@ public class SimplePageMaster {
      * Sets the value of the orphans property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setOrphans(String value) {
+    public void setOrphans(String value)
+    {
         this.orphans = value;
     }
 
     /**
      * Gets the value of the position property.
      * 
-     * @return
-     *     possible object is
-     *     {@link PositionType }
-     *     
+     * @return possible object is {@link PositionType }
+     * 
      */
-    public PositionType getPosition() {
+    public PositionType getPosition()
+    {
         return position;
     }
 
@@ -1386,23 +1366,22 @@ public class SimplePageMaster {
      * Sets the value of the position property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link PositionType }
-     *     
+     *            allowed object is {@link PositionType }
+     * 
      */
-    public void setPosition(PositionType value) {
+    public void setPosition(PositionType value)
+    {
         this.position = value;
     }
 
     /**
      * Gets the value of the provisionalDistanceBetweenStarts property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getProvisionalDistanceBetweenStarts() {
+    public String getProvisionalDistanceBetweenStarts()
+    {
         return provisionalDistanceBetweenStarts;
     }
 
@@ -1410,23 +1389,22 @@ public class SimplePageMaster {
      * Sets the value of the provisionalDistanceBetweenStarts property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setProvisionalDistanceBetweenStarts(String value) {
+    public void setProvisionalDistanceBetweenStarts(String value)
+    {
         this.provisionalDistanceBetweenStarts = value;
     }
 
     /**
      * Gets the value of the provisionalLabelSeparation property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getProvisionalLabelSeparation() {
+    public String getProvisionalLabelSeparation()
+    {
         return provisionalLabelSeparation;
     }
 
@@ -1434,23 +1412,22 @@ public class SimplePageMaster {
      * Sets the value of the provisionalLabelSeparation property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setProvisionalLabelSeparation(String value) {
+    public void setProvisionalLabelSeparation(String value)
+    {
         this.provisionalLabelSeparation = value;
     }
 
     /**
      * Gets the value of the relativeAlign property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RelativeAlignType }
-     *     
+     * @return possible object is {@link RelativeAlignType }
+     * 
      */
-    public RelativeAlignType getRelativeAlign() {
+    public RelativeAlignType getRelativeAlign()
+    {
         return relativeAlign;
     }
 
@@ -1458,23 +1435,22 @@ public class SimplePageMaster {
      * Sets the value of the relativeAlign property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RelativeAlignType }
-     *     
+     *            allowed object is {@link RelativeAlignType }
+     * 
      */
-    public void setRelativeAlign(RelativeAlignType value) {
+    public void setRelativeAlign(RelativeAlignType value)
+    {
         this.relativeAlign = value;
     }
 
     /**
      * Gets the value of the ruleStyle property.
      * 
-     * @return
-     *     possible object is
-     *     {@link RuleStyleType }
-     *     
+     * @return possible object is {@link RuleStyleType }
+     * 
      */
-    public RuleStyleType getRuleStyle() {
+    public RuleStyleType getRuleStyle()
+    {
         return ruleStyle;
     }
 
@@ -1482,23 +1458,22 @@ public class SimplePageMaster {
      * Sets the value of the ruleStyle property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link RuleStyleType }
-     *     
+     *            allowed object is {@link RuleStyleType }
+     * 
      */
-    public void setRuleStyle(RuleStyleType value) {
+    public void setRuleStyle(RuleStyleType value)
+    {
         this.ruleStyle = value;
     }
 
     /**
      * Gets the value of the ruleThickness property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getRuleThickness() {
+    public String getRuleThickness()
+    {
         return ruleThickness;
     }
 
@@ -1506,23 +1481,22 @@ public class SimplePageMaster {
      * Sets the value of the ruleThickness property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setRuleThickness(String value) {
+    public void setRuleThickness(String value)
+    {
         this.ruleThickness = value;
     }
 
     /**
      * Gets the value of the startIndent property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getStartIndent() {
+    public String getStartIndent()
+    {
         return startIndent;
     }
 
@@ -1530,23 +1504,22 @@ public class SimplePageMaster {
      * Sets the value of the startIndent property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setStartIndent(String value) {
+    public void setStartIndent(String value)
+    {
         this.startIndent = value;
     }
 
     /**
      * Gets the value of the textAlign property.
      * 
-     * @return
-     *     possible object is
-     *     {@link TextAlignType }
-     *     
+     * @return possible object is {@link TextAlignType }
+     * 
      */
-    public TextAlignType getTextAlign() {
+    public TextAlignType getTextAlign()
+    {
         return textAlign;
     }
 
@@ -1554,23 +1527,22 @@ public class SimplePageMaster {
      * Sets the value of the textAlign property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link TextAlignType }
-     *     
+     *            allowed object is {@link TextAlignType }
+     * 
      */
-    public void setTextAlign(TextAlignType value) {
+    public void setTextAlign(TextAlignType value)
+    {
         this.textAlign = value;
     }
 
     /**
      * Gets the value of the textAlignLast property.
      * 
-     * @return
-     *     possible object is
-     *     {@link TextAlignLastType }
-     *     
+     * @return possible object is {@link TextAlignLastType }
+     * 
      */
-    public TextAlignLastType getTextAlignLast() {
+    public TextAlignLastType getTextAlignLast()
+    {
         return textAlignLast;
     }
 
@@ -1578,23 +1550,22 @@ public class SimplePageMaster {
      * Sets the value of the textAlignLast property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link TextAlignLastType }
-     *     
+     *            allowed object is {@link TextAlignLastType }
+     * 
      */
-    public void setTextAlignLast(TextAlignLastType value) {
+    public void setTextAlignLast(TextAlignLastType value)
+    {
         this.textAlignLast = value;
     }
 
     /**
      * Gets the value of the textIndent property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getTextIndent() {
+    public String getTextIndent()
+    {
         return textIndent;
     }
 
@@ -1602,23 +1573,22 @@ public class SimplePageMaster {
      * Sets the value of the textIndent property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setTextIndent(String value) {
+    public void setTextIndent(String value)
+    {
         this.textIndent = value;
     }
 
     /**
      * Gets the value of the whiteSpaceCollapse property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WhiteSpaceCollapseType }
-     *     
+     * @return possible object is {@link WhiteSpaceCollapseType }
+     * 
      */
-    public WhiteSpaceCollapseType getWhiteSpaceCollapse() {
+    public WhiteSpaceCollapseType getWhiteSpaceCollapse()
+    {
         return whiteSpaceCollapse;
     }
 
@@ -1626,23 +1596,22 @@ public class SimplePageMaster {
      * Sets the value of the whiteSpaceCollapse property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WhiteSpaceCollapseType }
-     *     
+     *            allowed object is {@link WhiteSpaceCollapseType }
+     * 
      */
-    public void setWhiteSpaceCollapse(WhiteSpaceCollapseType value) {
+    public void setWhiteSpaceCollapse(WhiteSpaceCollapseType value)
+    {
         this.whiteSpaceCollapse = value;
     }
 
     /**
      * Gets the value of the widows property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getWidows() {
+    public String getWidows()
+    {
         return widows;
     }
 
@@ -1650,23 +1619,22 @@ public class SimplePageMaster {
      * Sets the value of the widows property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setWidows(String value) {
+    public void setWidows(String value)
+    {
         this.widows = value;
     }
 
     /**
      * Gets the value of the wrapOption property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WrapOptionType }
-     *     
+     * @return possible object is {@link WrapOptionType }
+     * 
      */
-    public WrapOptionType getWrapOption() {
+    public WrapOptionType getWrapOption()
+    {
         return wrapOption;
     }
 
@@ -1674,23 +1642,22 @@ public class SimplePageMaster {
      * Sets the value of the wrapOption property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WrapOptionType }
-     *     
+     *            allowed object is {@link WrapOptionType }
+     * 
      */
-    public void setWrapOption(WrapOptionType value) {
+    public void setWrapOption(WrapOptionType value)
+    {
         this.wrapOption = value;
     }
 
     /**
      * Gets the value of the autoRestore property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AutoRestoreType }
-     *     
+     * @return possible object is {@link AutoRestoreType }
+     * 
      */
-    public AutoRestoreType getAutoRestore() {
+    public AutoRestoreType getAutoRestore()
+    {
         return autoRestore;
     }
 
@@ -1698,11 +1665,11 @@ public class SimplePageMaster {
      * Sets the value of the autoRestore property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AutoRestoreType }
-     *     
+     *            allowed object is {@link AutoRestoreType }
+     * 
      */
-    public void setAutoRestore(AutoRestoreType value) {
+    public void setAutoRestore(AutoRestoreType value)
+    {
         this.autoRestore = value;
     }
 
@@ -1710,26 +1677,27 @@ public class SimplePageMaster {
      * Gets the value of the background property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the background property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the background property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getBackground().add(newItem);
+     * getBackground().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getBackground() {
-        if (background == null) {
+    public List<String> getBackground()
+    {
+        if (background == null)
+        {
             background = new ArrayList<String>();
         }
         return this.background;
@@ -1738,12 +1706,11 @@ public class SimplePageMaster {
     /**
      * Gets the value of the borderSpacing property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getBorderSpacing() {
+    public String getBorderSpacing()
+    {
         return borderSpacing;
     }
 
@@ -1751,23 +1718,22 @@ public class SimplePageMaster {
      * Sets the value of the borderSpacing property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setBorderSpacing(String value) {
+    public void setBorderSpacing(String value)
+    {
         this.borderSpacing = value;
     }
 
     /**
      * Gets the value of the captionSide property.
      * 
-     * @return
-     *     possible object is
-     *     {@link CaptionSideType }
-     *     
+     * @return possible object is {@link CaptionSideType }
+     * 
      */
-    public CaptionSideType getCaptionSide() {
+    public CaptionSideType getCaptionSide()
+    {
         return captionSide;
     }
 
@@ -1775,23 +1741,22 @@ public class SimplePageMaster {
      * Sets the value of the captionSide property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link CaptionSideType }
-     *     
+     *            allowed object is {@link CaptionSideType }
+     * 
      */
-    public void setCaptionSide(CaptionSideType value) {
+    public void setCaptionSide(CaptionSideType value)
+    {
         this.captionSide = value;
     }
 
     /**
      * Gets the value of the direction property.
      * 
-     * @return
-     *     possible object is
-     *     {@link DirectionType }
-     *     
+     * @return possible object is {@link DirectionType }
+     * 
      */
-    public DirectionType getDirection() {
+    public DirectionType getDirection()
+    {
         return direction;
     }
 
@@ -1799,23 +1764,22 @@ public class SimplePageMaster {
      * Sets the value of the direction property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link DirectionType }
-     *     
+     *            allowed object is {@link DirectionType }
+     * 
      */
-    public void setDirection(DirectionType value) {
+    public void setDirection(DirectionType value)
+    {
         this.direction = value;
     }
 
     /**
      * Gets the value of the emptyCells property.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmptyCellsType }
-     *     
+     * @return possible object is {@link EmptyCellsType }
+     * 
      */
-    public EmptyCellsType getEmptyCells() {
+    public EmptyCellsType getEmptyCells()
+    {
         return emptyCells;
     }
 
@@ -1823,23 +1787,22 @@ public class SimplePageMaster {
      * Sets the value of the emptyCells property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link EmptyCellsType }
-     *     
+     *            allowed object is {@link EmptyCellsType }
+     * 
      */
-    public void setEmptyCells(EmptyCellsType value) {
+    public void setEmptyCells(EmptyCellsType value)
+    {
         this.emptyCells = value;
     }
 
     /**
      * Gets the value of the font property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFont() {
+    public String getFont()
+    {
         return font;
     }
 
@@ -1847,23 +1810,22 @@ public class SimplePageMaster {
      * Sets the value of the font property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFont(String value) {
+    public void setFont(String value)
+    {
         this.font = value;
     }
 
     /**
      * Gets the value of the fontSelectionStrategy property.
      * 
-     * @return
-     *     possible object is
-     *     {@link FontSelectionStrategyType }
-     *     
+     * @return possible object is {@link FontSelectionStrategyType }
+     * 
      */
-    public FontSelectionStrategyType getFontSelectionStrategy() {
+    public FontSelectionStrategyType getFontSelectionStrategy()
+    {
         return fontSelectionStrategy;
     }
 
@@ -1871,23 +1833,22 @@ public class SimplePageMaster {
      * Sets the value of the fontSelectionStrategy property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link FontSelectionStrategyType }
-     *     
+     *            allowed object is {@link FontSelectionStrategyType }
+     * 
      */
-    public void setFontSelectionStrategy(FontSelectionStrategyType value) {
+    public void setFontSelectionStrategy(FontSelectionStrategyType value)
+    {
         this.fontSelectionStrategy = value;
     }
 
     /**
      * Gets the value of the fontSizeAdjust property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontSizeAdjust() {
+    public String getFontSizeAdjust()
+    {
         return fontSizeAdjust;
     }
 
@@ -1895,23 +1856,22 @@ public class SimplePageMaster {
      * Sets the value of the fontSizeAdjust property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontSizeAdjust(String value) {
+    public void setFontSizeAdjust(String value)
+    {
         this.fontSizeAdjust = value;
     }
 
     /**
      * Gets the value of the fontStretch property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getFontStretch() {
+    public String getFontStretch()
+    {
         return fontStretch;
     }
 
@@ -1919,23 +1879,22 @@ public class SimplePageMaster {
      * Sets the value of the fontStretch property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setFontStretch(String value) {
+    public void setFontStretch(String value)
+    {
         this.fontStretch = value;
     }
 
     /**
      * Gets the value of the fontVariant property.
      * 
-     * @return
-     *     possible object is
-     *     {@link FontVariantType }
-     *     
+     * @return possible object is {@link FontVariantType }
+     * 
      */
-    public FontVariantType getFontVariant() {
+    public FontVariantType getFontVariant()
+    {
         return fontVariant;
     }
 
@@ -1943,23 +1902,22 @@ public class SimplePageMaster {
      * Sets the value of the fontVariant property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link FontVariantType }
-     *     
+     *            allowed object is {@link FontVariantType }
+     * 
      */
-    public void setFontVariant(FontVariantType value) {
+    public void setFontVariant(FontVariantType value)
+    {
         this.fontVariant = value;
     }
 
     /**
      * Gets the value of the glyphOrientationVertical property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getGlyphOrientationVertical() {
+    public String getGlyphOrientationVertical()
+    {
         return glyphOrientationVertical;
     }
 
@@ -1967,23 +1925,22 @@ public class SimplePageMaster {
      * Sets the value of the glyphOrientationVertical property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setGlyphOrientationVertical(String value) {
+    public void setGlyphOrientationVertical(String value)
+    {
         this.glyphOrientationVertical = value;
     }
 
     /**
      * Gets the value of the glyphOrientationHorizontal property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getGlyphOrientationHorizontal() {
+    public String getGlyphOrientationHorizontal()
+    {
         return glyphOrientationHorizontal;
     }
 
@@ -1991,23 +1948,22 @@ public class SimplePageMaster {
      * Sets the value of the glyphOrientationHorizontal property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setGlyphOrientationHorizontal(String value) {
+    public void setGlyphOrientationHorizontal(String value)
+    {
         this.glyphOrientationHorizontal = value;
     }
 
     /**
      * Gets the value of the hyphenationKeep property.
      * 
-     * @return
-     *     possible object is
-     *     {@link HyphenationKeepType }
-     *     
+     * @return possible object is {@link HyphenationKeepType }
+     * 
      */
-    public HyphenationKeepType getHyphenationKeep() {
+    public HyphenationKeepType getHyphenationKeep()
+    {
         return hyphenationKeep;
     }
 
@@ -2015,23 +1971,22 @@ public class SimplePageMaster {
      * Sets the value of the hyphenationKeep property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link HyphenationKeepType }
-     *     
+     *            allowed object is {@link HyphenationKeepType }
+     * 
      */
-    public void setHyphenationKeep(HyphenationKeepType value) {
+    public void setHyphenationKeep(HyphenationKeepType value)
+    {
         this.hyphenationKeep = value;
     }
 
     /**
      * Gets the value of the hyphenationLadderCount property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getHyphenationLadderCount() {
+    public String getHyphenationLadderCount()
+    {
         return hyphenationLadderCount;
     }
 
@@ -2039,23 +1994,22 @@ public class SimplePageMaster {
      * Sets the value of the hyphenationLadderCount property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setHyphenationLadderCount(String value) {
+    public void setHyphenationLadderCount(String value)
+    {
         this.hyphenationLadderCount = value;
     }
 
     /**
      * Gets the value of the intrusionDisplace property.
      * 
-     * @return
-     *     possible object is
-     *     {@link DisplaceType }
-     *     
+     * @return possible object is {@link DisplaceType }
+     * 
      */
-    public DisplaceType getIntrusionDisplace() {
+    public DisplaceType getIntrusionDisplace()
+    {
         return intrusionDisplace;
     }
 
@@ -2063,23 +2017,22 @@ public class SimplePageMaster {
      * Sets the value of the intrusionDisplace property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link DisplaceType }
-     *     
+     *            allowed object is {@link DisplaceType }
+     * 
      */
-    public void setIntrusionDisplace(DisplaceType value) {
+    public void setIntrusionDisplace(DisplaceType value)
+    {
         this.intrusionDisplace = value;
     }
 
     /**
      * Gets the value of the lastLineEndIndent property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getLastLineEndIndent() {
+    public String getLastLineEndIndent()
+    {
         return lastLineEndIndent;
     }
 
@@ -2087,23 +2040,22 @@ public class SimplePageMaster {
      * Sets the value of the lastLineEndIndent property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setLastLineEndIndent(String value) {
+    public void setLastLineEndIndent(String value)
+    {
         this.lastLineEndIndent = value;
     }
 
     /**
      * Gets the value of the lineHeightShiftAdjustment property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LineHeightShiftAdjustmentType }
-     *     
+     * @return possible object is {@link LineHeightShiftAdjustmentType }
+     * 
      */
-    public LineHeightShiftAdjustmentType getLineHeightShiftAdjustment() {
+    public LineHeightShiftAdjustmentType getLineHeightShiftAdjustment()
+    {
         return lineHeightShiftAdjustment;
     }
 
@@ -2111,23 +2063,22 @@ public class SimplePageMaster {
      * Sets the value of the lineHeightShiftAdjustment property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LineHeightShiftAdjustmentType }
-     *     
+     *            allowed object is {@link LineHeightShiftAdjustmentType }
+     * 
      */
-    public void setLineHeightShiftAdjustment(LineHeightShiftAdjustmentType value) {
+    public void setLineHeightShiftAdjustment(LineHeightShiftAdjustmentType value)
+    {
         this.lineHeightShiftAdjustment = value;
     }
 
     /**
      * Gets the value of the lineStackingStrategy property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LineStackingStrategyType }
-     *     
+     * @return possible object is {@link LineStackingStrategyType }
+     * 
      */
-    public LineStackingStrategyType getLineStackingStrategy() {
+    public LineStackingStrategyType getLineStackingStrategy()
+    {
         return lineStackingStrategy;
     }
 
@@ -2135,23 +2086,22 @@ public class SimplePageMaster {
      * Sets the value of the lineStackingStrategy property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LineStackingStrategyType }
-     *     
+     *            allowed object is {@link LineStackingStrategyType }
+     * 
      */
-    public void setLineStackingStrategy(LineStackingStrategyType value) {
+    public void setLineStackingStrategy(LineStackingStrategyType value)
+    {
         this.lineStackingStrategy = value;
     }
 
     /**
      * Gets the value of the linefeedTreatment property.
      * 
-     * @return
-     *     possible object is
-     *     {@link LinefeedTreatmentType }
-     *     
+     * @return possible object is {@link LinefeedTreatmentType }
+     * 
      */
-    public LinefeedTreatmentType getLinefeedTreatment() {
+    public LinefeedTreatmentType getLinefeedTreatment()
+    {
         return linefeedTreatment;
     }
 
@@ -2159,11 +2109,11 @@ public class SimplePageMaster {
      * Sets the value of the linefeedTreatment property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link LinefeedTreatmentType }
-     *     
+     *            allowed object is {@link LinefeedTreatmentType }
+     * 
      */
-    public void setLinefeedTreatment(LinefeedTreatmentType value) {
+    public void setLinefeedTreatment(LinefeedTreatmentType value)
+    {
         this.linefeedTreatment = value;
     }
 
@@ -2171,26 +2121,27 @@ public class SimplePageMaster {
      * Gets the value of the margin property.
      * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the margin property.
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any
+     * modification you make to the returned list will be present inside the JAXB object. This is
+     * why there is not a <CODE>set</CODE> method for the margin property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getMargin().add(newItem);
+     * getMargin().add(newItem);
      * </pre>
      * 
      * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * Objects of the following type(s) are allowed in the list {@link String }
      * 
      * 
      */
-    public List<String> getMargin() {
-        if (margin == null) {
+    public List<String> getMargin()
+    {
+        if (margin == null)
+        {
             margin = new ArrayList<String>();
         }
         return this.margin;
@@ -2199,12 +2150,11 @@ public class SimplePageMaster {
     /**
      * Gets the value of the maxWidth property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMaxWidth() {
+    public String getMaxWidth()
+    {
         return maxWidth;
     }
 
@@ -2212,23 +2162,22 @@ public class SimplePageMaster {
      * Sets the value of the maxWidth property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMaxWidth(String value) {
+    public void setMaxWidth(String value)
+    {
         this.maxWidth = value;
     }
 
     /**
      * Gets the value of the minHeight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMinHeight() {
+    public String getMinHeight()
+    {
         return minHeight;
     }
 
@@ -2236,23 +2185,22 @@ public class SimplePageMaster {
      * Sets the value of the minHeight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMinHeight(String value) {
+    public void setMinHeight(String value)
+    {
         this.minHeight = value;
     }
 
     /**
      * Gets the value of the minWidth property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMinWidth() {
+    public String getMinWidth()
+    {
         return minWidth;
     }
 
@@ -2260,23 +2208,22 @@ public class SimplePageMaster {
      * Sets the value of the minWidth property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMinWidth(String value) {
+    public void setMinWidth(String value)
+    {
         this.minWidth = value;
     }
 
     /**
      * Gets the value of the pageBreakInside property.
      * 
-     * @return
-     *     possible object is
-     *     {@link PageBreakInsideType }
-     *     
+     * @return possible object is {@link PageBreakInsideType }
+     * 
      */
-    public PageBreakInsideType getPageBreakInside() {
+    public PageBreakInsideType getPageBreakInside()
+    {
         return pageBreakInside;
     }
 
@@ -2284,23 +2231,22 @@ public class SimplePageMaster {
      * Sets the value of the pageBreakInside property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link PageBreakInsideType }
-     *     
+     *            allowed object is {@link PageBreakInsideType }
+     * 
      */
-    public void setPageBreakInside(PageBreakInsideType value) {
+    public void setPageBreakInside(PageBreakInsideType value)
+    {
         this.pageBreakInside = value;
     }
 
     /**
      * Gets the value of the referenceOrientation property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getReferenceOrientation() {
+    public String getReferenceOrientation()
+    {
         return referenceOrientation;
     }
 
@@ -2308,23 +2254,22 @@ public class SimplePageMaster {
      * Sets the value of the referenceOrientation property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setReferenceOrientation(String value) {
+    public void setReferenceOrientation(String value)
+    {
         this.referenceOrientation = value;
     }
 
     /**
      * Gets the value of the scoreSpaces property.
      * 
-     * @return
-     *     possible object is
-     *     {@link ScoreSpacesType }
-     *     
+     * @return possible object is {@link ScoreSpacesType }
+     * 
      */
-    public ScoreSpacesType getScoreSpaces() {
+    public ScoreSpacesType getScoreSpaces()
+    {
         return scoreSpaces;
     }
 
@@ -2332,23 +2277,22 @@ public class SimplePageMaster {
      * Sets the value of the scoreSpaces property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link ScoreSpacesType }
-     *     
+     *            allowed object is {@link ScoreSpacesType }
+     * 
      */
-    public void setScoreSpaces(ScoreSpacesType value) {
+    public void setScoreSpaces(ScoreSpacesType value)
+    {
         this.scoreSpaces = value;
     }
 
     /**
      * Gets the value of the script property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getScript() {
+    public String getScript()
+    {
         return script;
     }
 
@@ -2356,23 +2300,22 @@ public class SimplePageMaster {
      * Sets the value of the script property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setScript(String value) {
+    public void setScript(String value)
+    {
         this.script = value;
     }
 
     /**
      * Gets the value of the textTransform property.
      * 
-     * @return
-     *     possible object is
-     *     {@link TextTransformType }
-     *     
+     * @return possible object is {@link TextTransformType }
+     * 
      */
-    public TextTransformType getTextTransform() {
+    public TextTransformType getTextTransform()
+    {
         return textTransform;
     }
 
@@ -2380,23 +2323,22 @@ public class SimplePageMaster {
      * Sets the value of the textTransform property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link TextTransformType }
-     *     
+     *            allowed object is {@link TextTransformType }
+     * 
      */
-    public void setTextTransform(TextTransformType value) {
+    public void setTextTransform(TextTransformType value)
+    {
         this.textTransform = value;
     }
 
     /**
      * Gets the value of the visibility property.
      * 
-     * @return
-     *     possible object is
-     *     {@link VisibilityType }
-     *     
+     * @return possible object is {@link VisibilityType }
+     * 
      */
-    public VisibilityType getVisibility() {
+    public VisibilityType getVisibility()
+    {
         return visibility;
     }
 
@@ -2404,23 +2346,22 @@ public class SimplePageMaster {
      * Sets the value of the visibility property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link VisibilityType }
-     *     
+     *            allowed object is {@link VisibilityType }
+     * 
      */
-    public void setVisibility(VisibilityType value) {
+    public void setVisibility(VisibilityType value)
+    {
         this.visibility = value;
     }
 
     /**
      * Gets the value of the whiteSpace property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WhiteSpaceType }
-     *     
+     * @return possible object is {@link WhiteSpaceType }
+     * 
      */
-    public WhiteSpaceType getWhiteSpace() {
+    public WhiteSpaceType getWhiteSpace()
+    {
         return whiteSpace;
     }
 
@@ -2428,23 +2369,22 @@ public class SimplePageMaster {
      * Sets the value of the whiteSpace property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WhiteSpaceType }
-     *     
+     *            allowed object is {@link WhiteSpaceType }
+     * 
      */
-    public void setWhiteSpace(WhiteSpaceType value) {
+    public void setWhiteSpace(WhiteSpaceType value)
+    {
         this.whiteSpace = value;
     }
 
     /**
      * Gets the value of the whiteSpaceTreatment property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WhiteSpaceTreatmentType }
-     *     
+     * @return possible object is {@link WhiteSpaceTreatmentType }
+     * 
      */
-    public WhiteSpaceTreatmentType getWhiteSpaceTreatment() {
+    public WhiteSpaceTreatmentType getWhiteSpaceTreatment()
+    {
         return whiteSpaceTreatment;
     }
 
@@ -2452,23 +2392,22 @@ public class SimplePageMaster {
      * Sets the value of the whiteSpaceTreatment property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WhiteSpaceTreatmentType }
-     *     
+     *            allowed object is {@link WhiteSpaceTreatmentType }
+     * 
      */
-    public void setWhiteSpaceTreatment(WhiteSpaceTreatmentType value) {
+    public void setWhiteSpaceTreatment(WhiteSpaceTreatmentType value)
+    {
         this.whiteSpaceTreatment = value;
     }
 
     /**
      * Gets the value of the wordSpacing property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getWordSpacing() {
+    public String getWordSpacing()
+    {
         return wordSpacing;
     }
 
@@ -2476,23 +2415,22 @@ public class SimplePageMaster {
      * Sets the value of the wordSpacing property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setWordSpacing(String value) {
+    public void setWordSpacing(String value)
+    {
         this.wordSpacing = value;
     }
 
     /**
      * Gets the value of the writingMode property.
      * 
-     * @return
-     *     possible object is
-     *     {@link WritingModeType }
-     *     
+     * @return possible object is {@link WritingModeType }
+     * 
      */
-    public WritingModeType getWritingMode() {
+    public WritingModeType getWritingMode()
+    {
         return writingMode;
     }
 
@@ -2500,23 +2438,22 @@ public class SimplePageMaster {
      * Sets the value of the writingMode property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link WritingModeType }
-     *     
+     *            allowed object is {@link WritingModeType }
+     * 
      */
-    public void setWritingMode(WritingModeType value) {
+    public void setWritingMode(WritingModeType value)
+    {
         this.writingMode = value;
     }
 
     /**
      * Gets the value of the marginTop property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMarginTop() {
+    public String getMarginTop()
+    {
         return marginTop;
     }
 
@@ -2524,23 +2461,22 @@ public class SimplePageMaster {
      * Sets the value of the marginTop property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMarginTop(String value) {
+    public void setMarginTop(String value)
+    {
         this.marginTop = value;
     }
 
     /**
      * Gets the value of the marginBottom property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMarginBottom() {
+    public String getMarginBottom()
+    {
         return marginBottom;
     }
 
@@ -2548,23 +2484,22 @@ public class SimplePageMaster {
      * Sets the value of the marginBottom property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMarginBottom(String value) {
+    public void setMarginBottom(String value)
+    {
         this.marginBottom = value;
     }
 
     /**
      * Gets the value of the marginLeft property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMarginLeft() {
+    public String getMarginLeft()
+    {
         return marginLeft;
     }
 
@@ -2572,23 +2507,22 @@ public class SimplePageMaster {
      * Sets the value of the marginLeft property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMarginLeft(String value) {
+    public void setMarginLeft(String value)
+    {
         this.marginLeft = value;
     }
 
     /**
      * Gets the value of the marginRight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getMarginRight() {
+    public String getMarginRight()
+    {
         return marginRight;
     }
 
@@ -2596,23 +2530,22 @@ public class SimplePageMaster {
      * Sets the value of the marginRight property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setMarginRight(String value) {
+    public void setMarginRight(String value)
+    {
         this.marginRight = value;
     }
 
     /**
      * Gets the value of the spaceBeforeOptimum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceBeforeOptimum() {
+    public String getSpaceBeforeOptimum()
+    {
         return spaceBeforeOptimum;
     }
 
@@ -2620,23 +2553,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceBeforeOptimum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceBeforeOptimum(String value) {
+    public void setSpaceBeforeOptimum(String value)
+    {
         this.spaceBeforeOptimum = value;
     }
 
     /**
      * Gets the value of the spaceAfterOptimum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceAfterOptimum() {
+    public String getSpaceAfterOptimum()
+    {
         return spaceAfterOptimum;
     }
 
@@ -2644,23 +2576,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceAfterOptimum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceAfterOptimum(String value) {
+    public void setSpaceAfterOptimum(String value)
+    {
         this.spaceAfterOptimum = value;
     }
 
     /**
      * Gets the value of the spaceBefore property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceBefore() {
+    public String getSpaceBefore()
+    {
         return spaceBefore;
     }
 
@@ -2668,23 +2599,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceBefore property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceBefore(String value) {
+    public void setSpaceBefore(String value)
+    {
         this.spaceBefore = value;
     }
 
     /**
      * Gets the value of the spaceBeforeMinimum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceBeforeMinimum() {
+    public String getSpaceBeforeMinimum()
+    {
         return spaceBeforeMinimum;
     }
 
@@ -2692,23 +2622,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceBeforeMinimum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceBeforeMinimum(String value) {
+    public void setSpaceBeforeMinimum(String value)
+    {
         this.spaceBeforeMinimum = value;
     }
 
     /**
      * Gets the value of the spaceBeforeMaximum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceBeforeMaximum() {
+    public String getSpaceBeforeMaximum()
+    {
         return spaceBeforeMaximum;
     }
 
@@ -2716,23 +2645,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceBeforeMaximum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceBeforeMaximum(String value) {
+    public void setSpaceBeforeMaximum(String value)
+    {
         this.spaceBeforeMaximum = value;
     }
 
     /**
      * Gets the value of the spaceBeforeConditionality property.
      * 
-     * @return
-     *     possible object is
-     *     {@link ConditionalityType }
-     *     
+     * @return possible object is {@link ConditionalityType }
+     * 
      */
-    public ConditionalityType getSpaceBeforeConditionality() {
+    public ConditionalityType getSpaceBeforeConditionality()
+    {
         return spaceBeforeConditionality;
     }
 
@@ -2740,23 +2668,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceBeforeConditionality property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link ConditionalityType }
-     *     
+     *            allowed object is {@link ConditionalityType }
+     * 
      */
-    public void setSpaceBeforeConditionality(ConditionalityType value) {
+    public void setSpaceBeforeConditionality(ConditionalityType value)
+    {
         this.spaceBeforeConditionality = value;
     }
 
     /**
      * Gets the value of the spaceBeforePrecedence property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceBeforePrecedence() {
+    public String getSpaceBeforePrecedence()
+    {
         return spaceBeforePrecedence;
     }
 
@@ -2764,23 +2691,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceBeforePrecedence property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceBeforePrecedence(String value) {
+    public void setSpaceBeforePrecedence(String value)
+    {
         this.spaceBeforePrecedence = value;
     }
 
     /**
      * Gets the value of the spaceAfter property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceAfter() {
+    public String getSpaceAfter()
+    {
         return spaceAfter;
     }
 
@@ -2788,23 +2714,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceAfter property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceAfter(String value) {
+    public void setSpaceAfter(String value)
+    {
         this.spaceAfter = value;
     }
 
     /**
      * Gets the value of the spaceAfterMinimum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceAfterMinimum() {
+    public String getSpaceAfterMinimum()
+    {
         return spaceAfterMinimum;
     }
 
@@ -2812,23 +2737,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceAfterMinimum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceAfterMinimum(String value) {
+    public void setSpaceAfterMinimum(String value)
+    {
         this.spaceAfterMinimum = value;
     }
 
     /**
      * Gets the value of the spaceAfterMaximum property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceAfterMaximum() {
+    public String getSpaceAfterMaximum()
+    {
         return spaceAfterMaximum;
     }
 
@@ -2836,23 +2760,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceAfterMaximum property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceAfterMaximum(String value) {
+    public void setSpaceAfterMaximum(String value)
+    {
         this.spaceAfterMaximum = value;
     }
 
     /**
      * Gets the value of the spaceAfterConditionality property.
      * 
-     * @return
-     *     possible object is
-     *     {@link ConditionalityType }
-     *     
+     * @return possible object is {@link ConditionalityType }
+     * 
      */
-    public ConditionalityType getSpaceAfterConditionality() {
+    public ConditionalityType getSpaceAfterConditionality()
+    {
         return spaceAfterConditionality;
     }
 
@@ -2860,23 +2783,22 @@ public class SimplePageMaster {
      * Sets the value of the spaceAfterConditionality property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link ConditionalityType }
-     *     
+     *            allowed object is {@link ConditionalityType }
+     * 
      */
-    public void setSpaceAfterConditionality(ConditionalityType value) {
+    public void setSpaceAfterConditionality(ConditionalityType value)
+    {
         this.spaceAfterConditionality = value;
     }
 
     /**
      * Gets the value of the spaceAfterPrecedence property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
-    public String getSpaceAfterPrecedence() {
+    public String getSpaceAfterPrecedence()
+    {
         return spaceAfterPrecedence;
     }
 
@@ -2884,47 +2806,70 @@ public class SimplePageMaster {
      * Sets the value of the spaceAfterPrecedence property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setSpaceAfterPrecedence(String value) {
+    public void setSpaceAfterPrecedence(String value)
+    {
         this.spaceAfterPrecedence = value;
     }
 
-    public RegionBody withRegionBody() {
-        if (this.regionBody == null) {
+    public RegionBody withRegionBody()
+    {
+        if (this.regionBody == null)
+        {
             regionBody = new RegionBody();
         }
         return regionBody;
     }
 
-    public RegionBefore withRegionBefore() {
-        if (this.regionBefore == null) {
+    public RegionBefore withRegionBefore()
+    {
+        if (this.regionBefore == null)
+        {
             regionBefore = new RegionBefore();
         }
         return regionBefore;
     }
 
-    public RegionAfter withRegionAfter() {
-        if (this.regionAfter == null) {
+    public RegionAfter withRegionAfter()
+    {
+        if (this.regionAfter == null)
+        {
             regionAfter = new RegionAfter();
         }
         return regionAfter;
     }
 
-    public RegionStart withRegionStart() {
-        if (this.regionStart == null) {
+    public RegionStart withRegionStart()
+    {
+        if (this.regionStart == null)
+        {
             regionStart = new RegionStart();
         }
         return regionStart;
     }
 
-    public RegionEnd withRegionEnd() {
-        if (this.regionEnd == null) {
+    public RegionEnd withRegionEnd()
+    {
+        if (this.regionEnd == null)
+        {
             regionEnd = new RegionEnd();
         }
         return regionEnd;
     }
 
+    public void setStyles(ReportStyle style)
+    {
+        setMarginRight(style.getSimplePageMasterMarginRight());
+        setMarginLeft(style.getSimplePageMasterMarginLeft());
+        setMarginBottom(style.getSimplePageMasterMarginBottom());
+        setMarginTop(style.getSimplePageMasterMarginTop());
+        setPageWidth(style.getSimplePageMasterPageWidth());
+        setPageHeight(style.getSimplePageMasterPageHeight());
+        withRegionBefore().setExtent(style.getSimplePageMasterRegionBeforeExtent());
+        withRegionAfter().setExtent(style.getSimplePageMasterRegionAfterExtent());
+        withRegionBody().setMarginTop(style.getSimplePageMasterRegionBodyMarginTop());
+        withRegionBody().setMarginBottom(style.getSimplePageMasterRegionBodyMarginBottom());
+    }
 }
