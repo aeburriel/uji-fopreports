@@ -40,12 +40,12 @@ public class Report
         root.withPageSequence(0).withFlow().getMarkerOrBlockOrBlockContainer().add(content);
     }
 
-    protected void serialize(OutputStream output) throws ReportSerializationException
+    public void serialize(OutputStream output) throws ReportSerializationException
     {
         serializer.serialize(root, output);
     }
 
-    protected Block withNewBlock()
+    public Block withNewBlock()
     {
         Block block = new Block(style);
         add(block);
