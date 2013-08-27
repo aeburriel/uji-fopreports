@@ -25,6 +25,22 @@
     </dependency>
   </dependencies>
 
+  <scm>
+    <connection>scm:svn:http://jira.uji.es/repos/uji/FOPREPORTS/uji-fopreports/trunk</connection>
+    <url>http://jira.uji.es/repos/uji/FOPREPORTS/uji-fopreports/trunk</url>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>nexus</id>
+      <url>http://devel01.uji.es:8080/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus</id>
+      <url>http://devel01.uji.es:8080/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <build>
     <plugins>
       <plugin>
@@ -35,40 +51,50 @@
           <target>1.6</target>
         </configuration>
       </plugin>
-      
-      <!-- 
-      <plugin> 
-        <groupId>org.jvnet.jaxb2.maven2</groupId> 
+
+      <!-- Proceso de release -->
+
+       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.2.1</version>
+        <configuration>
+          <tagNameFormat>${project.name}_@{project.version}</tagNameFormat>
+        </configuration>
+      </plugin>
+
+      <!--
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
-        <version>0.8.0</version> 
-        <executions> 
-          <execution> 
-            <goals> 
-              <goal>generate</goal> 
-            </goals> 
-          </execution> 
-        </executions> 
-        <configuration> 
+        <version>0.8.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
           <verbose>true</verbose>
           <generatePackage>es.uji.apps.fopreports.fop</generatePackage>
-          <forceRegenerate>true</forceRegenerate>          
-          <schemaIncludes> 
-            <include>fop.xsd</include> 
-          </schemaIncludes> 
-          <args> 
-            <arg>-Xfluent-api-ext</arg> 
-          </args> 
-          <plugins> 
-            <plugin> 
-              <groupId>redmosquito</groupId> 
-              <artifactId>jaxb-fluent-api-ext</artifactId> 
-              <version>0.0.3</version> 
-            </plugin> 
-          </plugins> 
-        </configuration> 
+          <forceRegenerate>true</forceRegenerate>
+          <schemaIncludes>
+            <include>fop.xsd</include>
+          </schemaIncludes>
+          <args>
+            <arg>-Xfluent-api-ext</arg>
+          </args>
+          <plugins>
+            <plugin>
+              <groupId>redmosquito</groupId>
+              <artifactId>jaxb-fluent-api-ext</artifactId>
+              <version>0.0.3</version>
+            </plugin>
+          </plugins>
+        </configuration>
       </plugin>
       -->
-     
     </plugins>
   </build>
 </project>

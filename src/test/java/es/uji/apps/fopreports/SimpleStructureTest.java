@@ -16,7 +16,7 @@ import es.uji.apps.fopreports.style.ReportStyle;
 
 public class SimpleStructureTest
 {
-    private static final String BASE_DIR = "src/test/resources/";
+    private static final String BASE_DIR = "target/";
 
     private SolicitudReport report;
 
