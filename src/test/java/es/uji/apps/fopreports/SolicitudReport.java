@@ -20,7 +20,10 @@ public class SolicitudReport extends Report
             throws ReportSerializerInitException
     {
         super(serializer, style);
-        
+
+        getSimplePageMaster().getRegionBody().setBackgroundImage("/opt/devel/workspaces/uji/uji-fopreports/src/main/resources/fondo.jpg");
+
+
         this.style = style;
     }
 

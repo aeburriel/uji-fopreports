@@ -2,13 +2,7 @@ package es.uji.apps.fopreports;
 
 import java.io.OutputStream;
 
-import es.uji.apps.fopreports.fop.Block;
-import es.uji.apps.fopreports.fop.PageSequence;
-import es.uji.apps.fopreports.fop.Root;
-import es.uji.apps.fopreports.fop.StaticContent;
-import es.uji.apps.fopreports.fop.Table;
-import es.uji.apps.fopreports.fop.TableCell;
-import es.uji.apps.fopreports.fop.TableRow;
+import es.uji.apps.fopreports.fop.*;
 import es.uji.apps.fopreports.serialization.ReportSerializationException;
 import es.uji.apps.fopreports.serialization.ReportSerializer;
 import es.uji.apps.fopreports.serialization.ReportSerializerInitException;
@@ -21,6 +15,8 @@ public class Report
 
     private Root root;
 
+    private SimplePageMaster simplePageMaster;
+
     public Report(ReportSerializer serializer, ReportStyle style)
             throws ReportSerializerInitException
     {
@@ -28,7 +24,9 @@ public class Report
         this.style = style;
 
         root = new Root(style);
-        root.withLayoutMasterSet().addSimplePageMaster().setMasterName("first");
+
+        simplePageMaster = root.withLayoutMasterSet().addSimplePageMaster();
+        simplePageMaster.setMasterName("first");
 
         PageSequence pageSequence = root.withNewPageSequence();
         pageSequence.setMasterReference("first");
@@ -120,5 +118,10 @@ public class Report
         }
 
         return tableRow;
+    }
+
+    protected SimplePageMaster getSimplePageMaster()
+    {
+        return simplePageMaster;
     }
 }
