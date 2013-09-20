@@ -119,6 +119,16 @@ public class Report
 
         return tableRow;
     }
+    
+    protected PageSequence withNewPageSequence()
+    {
+        return root.withNewPageSequence();
+    }
+
+    protected SimplePageMaster withSimplePageMaster()
+    {
+        return root.withLayoutMasterSet().addSimplePageMaster();
+    }
 
     protected SimplePageMaster getSimplePageMaster()
     {
