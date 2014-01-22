@@ -43,14 +43,21 @@ public class FopPDFSerializer implements ReportSerializer
     @Override
     public void serialize(Root root, OutputStream output) throws ReportSerializationException
     {
-        try
+    	FopFactory fopFactory = FopFactory.newInstance();
+    	serialize(root, output, fopFactory);
+    }
+
+	@Override
+	public void serialize(Root root, OutputStream output, FopFactory fopFactory)
+			throws ReportSerializationException {
+		try
         {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             marshaller.marshal(root, bos);
             
             System.out.println(new String(bos.toByteArray()));
 
-            Fop fop = FopFactory.newInstance().newFop(MimeConstants.MIME_PDF, output);
+            Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, output);
 
             Source source = new StreamSource(new ByteArrayInputStream(bos.toByteArray()));
             Result result = new SAXResult(fop.getDefaultHandler());
@@ -61,5 +68,5 @@ public class FopPDFSerializer implements ReportSerializer
         {
             throw new ReportSerializationException(e);
         }
-    }
+	}
 }
