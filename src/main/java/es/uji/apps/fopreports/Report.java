@@ -2,7 +2,16 @@ package es.uji.apps.fopreports;
 
 import java.io.OutputStream;
 
-import es.uji.apps.fopreports.fop.*;
+import org.apache.fop.apps.FopFactory;
+
+import es.uji.apps.fopreports.fop.Block;
+import es.uji.apps.fopreports.fop.PageSequence;
+import es.uji.apps.fopreports.fop.Root;
+import es.uji.apps.fopreports.fop.SimplePageMaster;
+import es.uji.apps.fopreports.fop.StaticContent;
+import es.uji.apps.fopreports.fop.Table;
+import es.uji.apps.fopreports.fop.TableCell;
+import es.uji.apps.fopreports.fop.TableRow;
 import es.uji.apps.fopreports.serialization.ReportSerializationException;
 import es.uji.apps.fopreports.serialization.ReportSerializer;
 import es.uji.apps.fopreports.serialization.ReportSerializerInitException;
@@ -41,6 +50,11 @@ public class Report
     public void serialize(OutputStream output) throws ReportSerializationException
     {
         serializer.serialize(root, output);
+    }
+    
+    public void serialize(OutputStream output, FopFactory fopFactory) throws ReportSerializationException
+    {
+        serializer.serialize(root, output, fopFactory);
     }
 
     public Block withNewBlock()
