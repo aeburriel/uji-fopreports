@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>es.uji.apps</groupId>
   <artifactId>uji-fopreports</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.0.3</version>
   <name>uji-fopreports</name>
 
   <properties>
@@ -25,8 +25,8 @@
   </dependencies>
 
   <scm>
-    <connection>scm:svn:http://jira.uji.es/repos/uji/FOPREPORTS/uji-fopreports/trunk</connection>
-    <url>http://jira.uji.es/repos/uji/FOPREPORTS/uji-fopreports/trunk</url>
+    <connection>scm:svn:http://jira.uji.es/repos/uji/FOPREPORTS/uji-fopreports/tags/uji-fopreports_0.0.3</connection>
+    <url>http://jira.uji.es/repos/uji/FOPREPORTS/uji-fopreports/tags/uji-fopreports_0.0.3</url>
   </scm>
 
   <distributionManagement>
