@@ -23,13 +23,13 @@ public class FopPDFSerializer implements ReportSerializer
 {
     private Marshaller marshaller;
     private Transformer transformer;
+    private JAXBContext context;
 
     public FopPDFSerializer() throws ReportSerializerInitException
     {
         try
         {
-            JAXBContext context = JAXBContext.newInstance(Root.class);
-            marshaller = context.createMarshaller();
+            context = JAXBContext.newInstance(Root.class);
 
             TransformerFactory factory = TransformerFactory.newInstance();
             transformer = factory.newTransformer();
@@ -53,6 +53,7 @@ public class FopPDFSerializer implements ReportSerializer
 		try
         {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
+	    marshaller = context.createMarshaller();
             marshaller.marshal(root, bos);
             
             System.out.println(new String(bos.toByteArray()));
