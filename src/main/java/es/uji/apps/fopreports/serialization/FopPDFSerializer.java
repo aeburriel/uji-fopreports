@@ -2,6 +2,7 @@ package es.uji.apps.fopreports.serialization;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.OutputStream;
 
 import javax.xml.bind.JAXBContext;
@@ -43,8 +44,12 @@ public class FopPDFSerializer implements ReportSerializer
     @Override
     public void serialize(Root root, OutputStream output) throws ReportSerializationException
     {
-    	FopFactory fopFactory = FopFactory.newInstance();
-    	serialize(root, output, fopFactory);
+        try {
+        	FopFactory fopFactory = FopFactory.newInstance(new File("/etc/uji/fop.xconf"));
+        	serialize(root, output, fopFactory);
+        } catch (Exception e) {
+            throw new ReportSerializationException(e);
+        }
     }
 
 	@Override
